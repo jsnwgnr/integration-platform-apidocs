@@ -649,7 +649,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/Macro"
       responses:
         200:
           description: "successful operation"
@@ -704,7 +704,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/Macro"
       responses:
         200:
           description: "success"
@@ -1759,7 +1759,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/Macro"
       responses:
         200:
           description: "successful operation"
@@ -1818,7 +1818,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/Macro"
       responses:
         200:
           description: "success"
@@ -2425,27 +2425,3 @@ definitions:
           $ref: "#/definitions/Property"
       href:
         type: "string"
-  macro:
-    type: "object"
-    properties:
-      name:
-        type: "string"
-        xml:
-          attribute: true
-        minLength: 0
-        maxLength: 255
-        pattern: "^[^\\/\\\\]*$"
-      value:
-        type: "string"
-        xml:
-          attribute: true
-        minLength: 0
-        maxLength: 2752
-      secure:
-        type: "boolean"
-      description:
-        type: "string"
-        xml:
-          attribute: true
-        minLength: 0
-        maxLength: 2752

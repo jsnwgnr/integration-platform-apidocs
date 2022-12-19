@@ -15,11 +15,6 @@ body {
     background: #fafafa;
 }
 
-.scheme-container {
-	display: none;
-	visibility: hidden;
-}
-
 .topbar-wrapper img {
     content:url('Actian-Logo-2020-1.svg');
 }

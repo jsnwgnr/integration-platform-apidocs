@@ -1,0 +1,1943 @@
+---
+swagger: "4.0"
+info:
+  description: "Retrieve Accounts and Users, Create Users and Update Users."
+  version: "3.1.1-SNAPSHOT"
+  title: "Account Manager"
+host: "api.im.actiandatacloud.com"
+schemes:
+- "https"
+paths:
+  /account:
+    get:
+      summary: "Get Account info"
+      description: ""
+      operationId: "getAccount"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/AccountResponse"
+        401:
+          description: "unauthorized"
+      x-datacloud:
+        integrationType: "lambda"
+        lambdaArn: "$AccountManagerService"
+  /account/license/default:
+    get:
+      summary: "Get License info"
+      description: ""
+      operationId: "getAccountDefaultLicenseInfo"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "ok"
+          schema:
+            $ref: "#/definitions/LicenseInfoResponse"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+  /account/{id}/files:
+    get:
+      summary: "Retrieve a list of user file names"
+      description: ""
+      operationId: "listAccountFiles"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the account to list files."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Search key for file name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (file name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/FileListResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    post:
+      summary: "Create a public account file"
+      description: ""
+      operationId: "createAccountFile"
+      consumes:
+      - "application/octet-stream"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "account id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "query"
+        description: "file name"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "file content"
+        required: false
+        schema:
+          $ref: "#/definitions/MultipartFile"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FileResponse"
+  /account/{id}/files/entrypoints/{key+}:
+    get:
+      summary: "Retrieve an account package entrypoints"
+      description: ""
+      operationId: "listAccountFileEntryPoints"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "account id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/EntryPoints"
+  /account/{id}/files/{key+}:
+    get:
+      summary: "Retrieve a public account file"
+      description: ""
+      operationId: "getAccountFile"
+      produces:
+      - "application/octet-stream"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "account id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+    put:
+      summary: "Update a public account file"
+      description: ""
+      operationId: "updateAccountFile"
+      consumes:
+      - "application/octet-stream"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "account id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "file content"
+        required: false
+        schema:
+          $ref: "#/definitions/MultipartFile"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FileResponse"
+    delete:
+      summary: "Delete a public account file"
+      description: ""
+      operationId: "deleteAccountFile"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "account id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+  /account/{id}/logins:
+    get:
+      summary: "Get account login history"
+      description: ""
+      operationId: "getAccountLoginHistory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the account to list the login attempts for."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (set to failed to see all failed attempts)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "ok"
+          schema:
+            $ref: "#/definitions/LoginAttemptListResponse"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+  /account/{id}/macrodef:
+    post:
+      summary: "Import distinct Macros from MacroDef file to Account"
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "importAccountMacroDef"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Account."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "MacroDef file, supported extensions JSON & XML."
+        required: true
+        schema:
+          $ref: "#/definitions/MultipartFile"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (macro name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        201:
+          description: "created"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        500:
+          description: "server exception"
+  /account/{id}/macros:
+    get:
+      summary: "Retrieve a list of account macros."
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "listAccountMacros"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Account."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (macro name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/MacroListResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    post:
+      summary: "Create an account macro"
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "createAccountMacro"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Account."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON body for a macro."
+        required: true
+        schema:
+          $ref: "#/definitions/macro"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        201:
+          description: "created"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+        409:
+          description: "conflict"
+  /account/{id}/macros/{name}:
+    get:
+      summary: "Retrieve an account macro"
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "getAccountMacro"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Account."
+        required: true
+        type: "string"
+      - name: "name"
+        in: "path"
+        description: "Name of the macro to retrieve."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    put:
+      summary: "Update an account macro"
+      description: "Macro value is only returned if the macro is not marked as secure.\
+        \ Secure macros can only be updated if update is secure. "
+      operationId: "updateAccountMacro"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Account."
+        required: true
+        type: "string"
+      - name: "name"
+        in: "path"
+        description: "Name of the macro to update."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON body for a macro update."
+        required: true
+        schema:
+          $ref: "#/definitions/macro"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "lambda"
+        lambdaArn: "$AccountManagerService"
+    delete:
+      summary: "Delete an account macro"
+      description: ""
+      operationId: "deleteAccountMacro"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Account to delete the macro from."
+        required: true
+        type: "string"
+      - name: "name"
+        in: "path"
+        description: "Name of the macro to delete."
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "success"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "lambda"
+        lambdaArn: "$AccountManagerService"
+  /user:
+    get:
+      summary: "Get user info"
+      description: ""
+      operationId: "getCurrentUser"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+  /users:
+    get:
+      summary: "Get a list of users"
+      description: ""
+      operationId: "listUsers"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "active"
+        in: "query"
+        description: "Boolean to determine if Active or Inactive users should be returned."
+        required: false
+        type: "string"
+        default: "all"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (user name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserListResponse"
+        401:
+          description: "unauthorized"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    post:
+      summary: "Create a user"
+      description: "Creates a new user"
+      operationId: "createUser"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "JSON to create a user."
+        required: true
+        schema:
+          $ref: "#/definitions/UserRequest"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UserResponse"
+        201:
+          description: "created"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+  /users/externalid/{id}:
+    get:
+      summary: "Get user info"
+      description: ""
+      operationId: "getUserByExternalId"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ExternalId of the user to retrieve."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+  /users/metrics:
+    get:
+      summary: "Retrieve a list of User Metrics"
+      description: ""
+      operationId: "getUserMetrics"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "duration"
+        in: "query"
+        description: "Time duration from which to query.  Use the format 30d15h25min.\
+          \  Can be any combination of those parameters."
+        required: false
+        type: "string"
+        default: "30d"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (access policy name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserMetricsListResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+  /users/{id}:
+    get:
+      summary: "Get user info"
+      description: ""
+      operationId: "getUser"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the user to retrieve."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    put:
+      summary: "Update a user"
+      description: "Updates an existing user"
+      operationId: "updateUser"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the user to update."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON body for the updated user."
+        required: true
+        schema:
+          $ref: "#/definitions/UserRequest"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "lambda"
+        lambdaArn: "$AccountManagerService"
+  /users/{id}/files:
+    get:
+      summary: "Retrieve a list of user file names"
+      description: ""
+      operationId: "listUserFiles"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the user to list files from."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Search key for file name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (access policy name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/FileListResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    post:
+      summary: "Create a private user file"
+      description: ""
+      operationId: "createUserFile"
+      consumes:
+      - "application/octet-stream"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "user id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "query"
+        description: "file name"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "file content"
+        required: false
+        schema:
+          $ref: "#/definitions/MultipartFile"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FileResponse"
+  /users/{id}/files/entrypoints/{key+}:
+    get:
+      summary: "Retrieve an user package entrypoints"
+      description: ""
+      operationId: "listUserFileEntryPoints"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "user id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/EntryPoints"
+  /users/{id}/files/{key+}:
+    get:
+      summary: "Retrieve a private user file"
+      description: ""
+      operationId: "getUserFile"
+      produces:
+      - "application/octet-stream"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "user id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+    put:
+      summary: "Update a private user file"
+      description: ""
+      operationId: "updateUserFile"
+      consumes:
+      - "application/octet-stream"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "user id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "file content"
+        required: false
+        schema:
+          $ref: "#/definitions/MultipartFile"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/FileResponse"
+    delete:
+      summary: "Delete a private user file"
+      description: ""
+      operationId: "deleteUserFile"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "user id"
+        required: true
+        type: "string"
+      - name: "key"
+        in: "path"
+        description: "file name"
+        required: true
+        type: "string"
+      responses:
+        default:
+          description: "successful operation"
+  /users/{id}/license/default:
+    get:
+      summary: "Get License info"
+      description: ""
+      operationId: "getUserDefaultLicenseInfo"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "ok"
+          schema:
+            $ref: "#/definitions/LicenseInfoResponse"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+  /users/{id}/logins:
+    get:
+      summary: "Get account login history"
+      description: ""
+      operationId: "listUserLoginHistory"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the user to list the login attempts for."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (set to failed to see all failed attempts)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "ok"
+          schema:
+            $ref: "#/definitions/LoginAttemptListResponse"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+  /users/{id}/macrodef:
+    post:
+      summary: "Import distinct Macros from MacroDef file to User"
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "importUserMacroDef"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "MacroDef file, supported extensions JSON & XML."
+        required: true
+        schema:
+          $ref: "#/definitions/MultipartFile"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (macro name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        201:
+          description: "created"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        500:
+          description: "server exception"
+  /users/{id}/macros:
+    get:
+      summary: "Retrieve a list of user macros."
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "listUserMacros"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page number (zero based)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Page size"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort by column name"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Sort direction (asc or desc)"
+        required: false
+        schema:
+          type: "string"
+      - in: "body"
+        name: "body"
+        description: "Filter (macro name)"
+        required: false
+        schema:
+          type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/MacroListResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    post:
+      summary: "Create a user macro"
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "createUserMacro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON for a Macro."
+        required: true
+        schema:
+          $ref: "#/definitions/macro"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        201:
+          description: "created"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+        409:
+          description: "conflict"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+  /users/{id}/macros/{name}:
+    get:
+      summary: "Retrieve a user macro"
+      description: "Macro value is only returned if the macro is not marked as secure. "
+      operationId: "getUserMacro"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "name"
+        in: "path"
+        description: "Name of the Macro to retrieve."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "Lambda"
+        lambdaArn: "$AccountManagerService"
+    put:
+      summary: "Update a user macro"
+      description: "Macro value is only returned if the macro is not marked as secure.\
+        \ Secure macros can only be updated if update is secure. "
+      operationId: "updateUserMacro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "name"
+        in: "path"
+        description: "Name of the Macro to update."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON for a Macro update."
+        required: true
+        schema:
+          $ref: "#/definitions/macro"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/MacroResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "lambda"
+        lambdaArn: "$AccountManagerService"
+    delete:
+      summary: "Delete a user macro"
+      description: ""
+      operationId: "deleteUserMacro"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "name"
+        in: "path"
+        description: "Name of the Macro to delete."
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "success"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+      x-datacloud:
+        integrationType: "lambda"
+        lambdaArn: "$AccountManagerService"
+  /users/{id}/password:
+    post:
+      summary: "Change your API Password"
+      description: ""
+      operationId: "changePassword"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+        401:
+          description: "unauthorized"
+  /users/{id}/preferences:
+    post:
+      summary: "Create User Preference info for a designated type"
+      description: ""
+      operationId: "createUserPreferenceInfo"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON for a User Preference set."
+        required: true
+        schema:
+          $ref: "#/definitions/UserPreferenceRequest"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UserPreferenceResponse"
+        201:
+          description: "created"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        500:
+          description: "server exception"
+  /users/{id}/preferences/{type}:
+    get:
+      summary: "Retrieve User Preference info for a designated type"
+      description: ""
+      operationId: "getUserPreferenceInfo"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "type"
+        in: "path"
+        description: "Name of the tpe to get."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "success"
+          schema:
+            type: "object"
+            additionalProperties:
+              type: "object"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+    put:
+      summary: "Overwrite User Preference set for a designated type"
+      description: ""
+      operationId: "updateUserPreferenceInfo"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "type"
+        in: "path"
+        description: "Type of Preference set to Update."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON for a User Preference set."
+        required: true
+        schema:
+          type: "object"
+          additionalProperties:
+            type: "object"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserPreferenceResponse"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+        500:
+          description: "server exception"
+    delete:
+      summary: "Patch User Preference set for a designated type"
+      description: ""
+      operationId: "deleteUserPreferenceInfo"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "type"
+        in: "path"
+        description: "Type of Preference set to Update."
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UserPreferenceResponse"
+        204:
+          description: "success"
+        404:
+          description: "not found"
+    patch:
+      summary: "Patch User Preference set for a designated type"
+      description: ""
+      operationId: "patchUserPreferenceInfo"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the User."
+        required: true
+        type: "string"
+      - name: "type"
+        in: "path"
+        description: "Type of Preference set to Update."
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "JSON for a User Preference set."
+        required: true
+        schema:
+          type: "object"
+          additionalProperties:
+            type: "object"
+      responses:
+        200:
+          description: "success"
+          schema:
+            $ref: "#/definitions/UserPreferenceResponse"
+        400:
+          description: "bad request"
+          schema:
+            $ref: "#/definitions/ApiErrorResponse"
+        401:
+          description: "unauthorized"
+        404:
+          description: "not found"
+        500:
+          description: "server exception"
+definitions:
+  AccountReference:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      href:
+        type: "string"
+      customerId:
+        type: "string"
+  AccountResponse:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      href:
+        type: "string"
+      customerId:
+        type: "string"
+  ApiErrorResponse:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  EntryPoints:
+    type: "object"
+    properties:
+      packageName:
+        type: "string"
+      entryPoints:
+        type: "array"
+        items:
+          type: "string"
+  FeatureResponse:
+    type: "object"
+    properties:
+      featureCode:
+        type: "string"
+      expiration:
+        type: "string"
+  FileListResponse:
+    type: "object"
+    properties:
+      totalRecords:
+        type: "integer"
+        format: "int64"
+      totalPages:
+        type: "integer"
+        format: "int32"
+      size:
+        type: "integer"
+        format: "int32"
+      pageNumber:
+        type: "integer"
+        format: "int32"
+      sortBy:
+        type: "string"
+      direction:
+        type: "string"
+      filter:
+        type: "string"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/FileResponse"
+  FileMetaData:
+    type: "object"
+    properties:
+      size:
+        type: "integer"
+        format: "int64"
+      lastModified:
+        type: "string"
+        format: "date-time"
+      entityType:
+        type: "string"
+        enum:
+        - "ACCOUNT"
+        - "GROUP"
+        - "USER"
+        - "PROVISIONING"
+        - "LICENSE"
+        - "JOBTEMPLATE"
+        - "JOBCONFIG"
+        - "JOB"
+        - "OUTPUT"
+        - "TEMP"
+        - "AGENT"
+        - "NONE"
+      entityId:
+        type: "string"
+      linkType:
+        type: "string"
+        enum:
+        - "LINK"
+        - "INHERITED"
+        - "LOCAL"
+      linkId:
+        type: "integer"
+        format: "int64"
+  FileResponse:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      href:
+        type: "string"
+      metadata:
+        $ref: "#/definitions/FileMetaData"
+      linkId:
+        type: "string"
+  InputStream:
+    type: "object"
+  LicenseInfoResponse:
+    type: "object"
+    properties:
+      licenseId:
+        type: "string"
+      licenseFile:
+        type: "string"
+      licenseSignatureType:
+        type: "string"
+      licenseStatus:
+        type: "string"
+      features:
+        type: "array"
+        items:
+          $ref: "#/definitions/FeatureResponse"
+  LoginAttemptListResponse:
+    type: "object"
+    properties:
+      totalRecords:
+        type: "integer"
+        format: "int64"
+      totalPages:
+        type: "integer"
+        format: "int32"
+      size:
+        type: "integer"
+        format: "int32"
+      pageNumber:
+        type: "integer"
+        format: "int32"
+      sortBy:
+        type: "string"
+      direction:
+        type: "string"
+      filter:
+        type: "string"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/LoginAttemptResponse"
+  LoginAttemptResponse:
+    type: "object"
+    properties:
+      timestamp:
+        type: "integer"
+        format: "int64"
+      userId:
+        type: "integer"
+        format: "int64"
+      username:
+        type: "string"
+      remoteAddr:
+        type: "string"
+      success:
+        type: "boolean"
+      exception:
+        type: "string"
+  MacroListResponse:
+    type: "object"
+    properties:
+      totalRecords:
+        type: "integer"
+        format: "int64"
+      totalPages:
+        type: "integer"
+        format: "int32"
+      size:
+        type: "integer"
+        format: "int32"
+      pageNumber:
+        type: "integer"
+        format: "int32"
+      sortBy:
+        type: "string"
+      direction:
+        type: "string"
+      filter:
+        type: "string"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/MacroResponse"
+  MacroResponse:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      value:
+        type: "string"
+      secure:
+        type: "boolean"
+      description:
+        type: "string"
+      created:
+        type: "string"
+        format: "date-time"
+      lastModified:
+        type: "string"
+        format: "date-time"
+  MultipartFile:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      empty:
+        type: "boolean"
+      bytes:
+        type: "array"
+        items:
+          type: "string"
+          format: "byte"
+      size:
+        type: "integer"
+        format: "int64"
+      inputStream:
+        $ref: "#/definitions/InputStream"
+      contentType:
+        type: "string"
+      originalFilename:
+        type: "string"
+  Reference:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      href:
+        type: "string"
+  UserListResponse:
+    type: "object"
+    properties:
+      totalRecords:
+        type: "integer"
+        format: "int64"
+      totalPages:
+        type: "integer"
+        format: "int32"
+      size:
+        type: "integer"
+        format: "int32"
+      pageNumber:
+        type: "integer"
+        format: "int32"
+      sortBy:
+        type: "string"
+      direction:
+        type: "string"
+      filter:
+        type: "string"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/UserResponse"
+  UserMetricsListResponse:
+    type: "object"
+    properties:
+      totalRecords:
+        type: "integer"
+        format: "int64"
+      totalPages:
+        type: "integer"
+        format: "int32"
+      size:
+        type: "integer"
+        format: "int32"
+      pageNumber:
+        type: "integer"
+        format: "int32"
+      sortBy:
+        type: "string"
+      direction:
+        type: "string"
+      filter:
+        type: "string"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/UserMetricsResponse"
+  UserMetricsResponse:
+    type: "object"
+    properties:
+      loginCount:
+        type: "integer"
+        format: "int64"
+      loginFailures:
+        type: "integer"
+        format: "int64"
+      executionCount:
+        type: "integer"
+        format: "int64"
+      executionTime:
+        type: "integer"
+        format: "int64"
+      jobTemplateCount:
+        type: "integer"
+        format: "int64"
+      jobConfigCount:
+        type: "integer"
+        format: "int64"
+      dateRange:
+        type: "string"
+      user:
+        $ref: "#/definitions/Reference"
+  UserPreferenceRequest:
+    type: "object"
+    required:
+    - "type"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      userId:
+        type: "integer"
+        format: "int64"
+      type:
+        type: "string"
+      preferences:
+        type: "object"
+        additionalProperties:
+          type: "object"
+  UserPreferenceResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      userId:
+        type: "integer"
+        format: "int64"
+      type:
+        type: "string"
+      preferences:
+        type: "object"
+        additionalProperties:
+          type: "object"
+      created:
+        type: "string"
+        format: "date-time"
+      lastModified:
+        type: "string"
+        format: "date-time"
+      createdByUser:
+        $ref: "#/definitions/Reference"
+      lastModifiedByUser:
+        $ref: "#/definitions/Reference"
+  UserRequest:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      username:
+        type: "string"
+      password:
+        type: "string"
+      email:
+        type: "string"
+      active:
+        type: "boolean"
+      admin:
+        type: "boolean"
+      accessPolicyId:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      street:
+        type: "string"
+      city:
+        type: "string"
+      state:
+        type: "string"
+      postalCode:
+        type: "string"
+      country:
+        type: "string"
+  UserResponse:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      username:
+        type: "string"
+      href:
+        type: "string"
+      password:
+        type: "string"
+      email:
+        type: "string"
+      active:
+        type: "boolean"
+      admin:
+        type: "boolean"
+      accessPolicyId:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      street:
+        type: "string"
+      city:
+        type: "string"
+      state:
+        type: "string"
+      postalCode:
+        type: "string"
+      country:
+        type: "string"
+      superuser:
+        type: "boolean"
+      supportuser:
+        type: "boolean"
+      externalId:
+        type: "string"
+      account:
+        $ref: "#/definitions/AccountReference"
+      accessPolicy:
+        $ref: "#/definitions/Reference"
+      accessPolicies:
+        type: "array"
+        items:
+          $ref: "#/definitions/Reference"
+      created:
+        type: "string"
+        format: "date-time"
+      createdByUser:
+        $ref: "#/definitions/Reference"
+      lastModified:
+        type: "string"
+        format: "date-time"
+      lastModifiedByUser:
+        $ref: "#/definitions/Reference"
+  macro:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 255
+        pattern: "^[^\\/\\\\]*$"
+      value:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 2752
+      secure:
+        type: "boolean"
+      description:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 2752

@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: "Retrieve Account Info. Create and Update Users."
+  description: "Retrieve Accounts and Users, Create Users and Update Users."
   version: "3.1.1-SNAPSHOT"
   title: "Accounts and Users"
 host: "api.im.actiandatacloud.com"
@@ -10,7 +10,7 @@ schemes:
 paths:
   /account:
     get:
-      summary: "Get Account info"
+      summary: "Retrieve Account Info"
       description: ""
       operationId: "getAccount"
       produces:
@@ -23,28 +23,9 @@ paths:
             $ref: "#/definitions/AccountResponse"
         401:
           description: "unauthorized"
-  /account/license/default:
-    get:
-      summary: "Get License info"
-      description: ""
-      operationId: "getAccountDefaultLicenseInfo"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        200:
-          description: "ok"
-          schema:
-            $ref: "#/definitions/LicenseInfoResponse"
-        400:
-          description: "bad request"
-          schema:
-            $ref: "#/definitions/ApiErrorResponse"
-        401:
-          description: "unauthorized"
   /account/{id}/files:
     get:
-      summary: "Retrieve a list of user file names"
+      summary: "List Public Files in this Account"
       description: ""
       operationId: "listAccountFiles"
       produces:
@@ -101,7 +82,7 @@ paths:
         404:
           description: "not found"
     post:
-      summary: "Create a public account file"
+      summary: "Create a Public File"
       description: ""
       operationId: "createAccountFile"
       consumes:
@@ -132,7 +113,7 @@ paths:
             $ref: "#/definitions/FileResponse"
   /account/{id}/files/entrypoints/{key+}:
     get:
-      summary: "Retrieve an account package entrypoints"
+      summary: "Retrieve EntryPoints for a Public Package File"
       description: ""
       operationId: "listAccountFileEntryPoints"
       produces:
@@ -155,7 +136,7 @@ paths:
             $ref: "#/definitions/EntryPoints"
   /account/{id}/files/{key+}:
     get:
-      summary: "Retrieve a public account file"
+      summary: "Download a Public File"
       description: ""
       operationId: "getAccountFile"
       produces:
@@ -175,7 +156,7 @@ paths:
         default:
           description: "successful operation"
     put:
-      summary: "Update a public account file"
+      summary: "Update a Public File"
       description: ""
       operationId: "updateAccountFile"
       consumes:
@@ -205,7 +186,7 @@ paths:
           schema:
             $ref: "#/definitions/FileResponse"
     delete:
-      summary: "Delete a public account file"
+      summary: "Delete a Public File"
       description: ""
       operationId: "deleteAccountFile"
       parameters:
@@ -224,7 +205,7 @@ paths:
           description: "successful operation"
   /account/{id}/logins:
     get:
-      summary: "Get account login history"
+      summary: "Get Recent Account Login Attempt History"
       description: ""
       operationId: "getAccountLoginHistory"
       produces:
@@ -278,8 +259,8 @@ paths:
           description: "unauthorized"
   /account/{id}/macrodef:
     post:
-      summary: "Import distinct Macros from MacroDef file to Account"
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "Import MacroDef file to Public Macros"
+      description: ""
       operationId: "importAccountMacroDef"
       produces:
       - "application/json"
@@ -342,8 +323,8 @@ paths:
           description: "server exception"
   /account/{id}/macros:
     get:
-      summary: "Retrieve a list of account macros."
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "List Public Macros in this Account"
+      description: ""
       operationId: "listAccountMacros"
       produces:
       - "application/json"
@@ -393,8 +374,8 @@ paths:
         404:
           description: "not found"
     post:
-      summary: "Create an account macro"
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "Create a Public Macro"
+      description: ""
       operationId: "createAccountMacro"
       produces:
       - "application/json"
@@ -429,8 +410,8 @@ paths:
           description: "conflict"
   /account/{id}/macros/{name}:
     get:
-      summary: "Retrieve an account macro"
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "Retrieve a Public Macro"
+      description: ""
       operationId: "getAccountMacro"
       produces:
       - "application/json"
@@ -455,9 +436,8 @@ paths:
         404:
           description: "not found"
     put:
-      summary: "Update an account macro"
-      description: "Macro value is only returned if the macro is not marked as secure.\
-        \ Secure macros can only be updated if update is secure. "
+      summary: "Update a Public Macro"
+      description: ""
       operationId: "updateAccountMacro"
       produces:
       - "application/json"
@@ -488,7 +468,7 @@ paths:
         404:
           description: "not found"
     delete:
-      summary: "Delete an account macro"
+      summary: "Delete a Public Macro"
       description: ""
       operationId: "deleteAccountMacro"
       produces:
@@ -513,7 +493,7 @@ paths:
           description: "not found"
   /user:
     get:
-      summary: "Get user info"
+      summary: "Retrieve User Info"
       description: ""
       operationId: "getCurrentUser"
       produces:
@@ -530,7 +510,7 @@ paths:
           description: "not found"
   /users:
     get:
-      summary: "Get a list of users"
+      summary: "List Users in this Account"
       description: ""
       operationId: "listUsers"
       produces:
@@ -580,8 +560,8 @@ paths:
         401:
           description: "unauthorized"
     post:
-      summary: "Create a user"
-      description: "Creates a new user"
+      summary: "Create a User"
+      description: ""
       operationId: "createUser"
       consumes:
       - "application/json"
@@ -609,7 +589,7 @@ paths:
           description: "unauthorized"
   /users/externalid/{id}:
     get:
-      summary: "Get user info"
+      summary: "Retrieve User Info by External Id"
       description: ""
       operationId: "getUserByExternalId"
       produces:
@@ -631,7 +611,7 @@ paths:
           description: "not found"
   /users/metrics:
     get:
-      summary: "Retrieve a list of User Metrics"
+      summary: "Retrieve User Metrics"
       description: ""
       operationId: "getUserMetrics"
       produces:
@@ -685,7 +665,7 @@ paths:
           description: "not found"
   /users/{id}:
     get:
-      summary: "Get user info"
+      summary: "Retrieve User Info"
       description: ""
       operationId: "getUser"
       produces:
@@ -706,8 +686,8 @@ paths:
         404:
           description: "not found"
     put:
-      summary: "Update a user"
-      description: "Updates an existing user"
+      summary: "Update User Info"
+      description: ""
       operationId: "updateUser"
       consumes:
       - "application/json"
@@ -736,7 +716,7 @@ paths:
           description: "not found"
   /users/{id}/files:
     get:
-      summary: "Retrieve a list of user file names"
+      summary: "List Private Files for this User"
       description: ""
       operationId: "listUserFiles"
       produces:
@@ -793,7 +773,7 @@ paths:
         404:
           description: "not found"
     post:
-      summary: "Create a private user file"
+      summary: "Create a Private File"
       description: ""
       operationId: "createUserFile"
       consumes:
@@ -824,7 +804,7 @@ paths:
             $ref: "#/definitions/FileResponse"
   /users/{id}/files/entrypoints/{key+}:
     get:
-      summary: "Retrieve an user package entrypoints"
+      summary: "Retrieve EntryPoints for a Private Package File"
       description: ""
       operationId: "listUserFileEntryPoints"
       produces:
@@ -847,7 +827,7 @@ paths:
             $ref: "#/definitions/EntryPoints"
   /users/{id}/files/{key+}:
     get:
-      summary: "Retrieve a private user file"
+      summary: "Download a Private File"
       description: ""
       operationId: "getUserFile"
       produces:
@@ -867,7 +847,7 @@ paths:
         default:
           description: "successful operation"
     put:
-      summary: "Update a private user file"
+      summary: "Update a Private File"
       description: ""
       operationId: "updateUserFile"
       consumes:
@@ -897,7 +877,7 @@ paths:
           schema:
             $ref: "#/definitions/FileResponse"
     delete:
-      summary: "Delete a private user file"
+      summary: "Delete a Private File"
       description: ""
       operationId: "deleteUserFile"
       parameters:
@@ -914,28 +894,9 @@ paths:
       responses:
         default:
           description: "successful operation"
-  /users/{id}/license/default:
-    get:
-      summary: "Get License info"
-      description: ""
-      operationId: "getUserDefaultLicenseInfo"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        200:
-          description: "ok"
-          schema:
-            $ref: "#/definitions/LicenseInfoResponse"
-        400:
-          description: "bad request"
-          schema:
-            $ref: "#/definitions/ApiErrorResponse"
-        401:
-          description: "unauthorized"
   /users/{id}/logins:
     get:
-      summary: "Get account login history"
+      summary: "Get User Login History"
       description: ""
       operationId: "listUserLoginHistory"
       produces:
@@ -989,8 +950,8 @@ paths:
           description: "unauthorized"
   /users/{id}/macrodef:
     post:
-      summary: "Import distinct Macros from MacroDef file to User"
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "Import MacroDef file to Private Macros"
+      description: ""
       operationId: "importUserMacroDef"
       produces:
       - "application/json"
@@ -1040,7 +1001,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/MacroResponse"
+            $ref: "#/definitions/MacroListResponse"
         201:
           description: "created"
         400:
@@ -1051,8 +1012,8 @@ paths:
           description: "unauthorized"
   /users/{id}/macros:
     get:
-      summary: "Retrieve a list of user macros."
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "List Private Macros for this User"
+      description: ""
       operationId: "listUserMacros"
       produces:
       - "application/json"
@@ -1102,8 +1063,8 @@ paths:
         404:
           description: "not found"
     post:
-      summary: "Create a user macro"
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "Create a Private Macro"
+      description: ""
       operationId: "createUserMacro"
       consumes:
       - "application/json"
@@ -1140,8 +1101,8 @@ paths:
           description: "conflict"
   /users/{id}/macros/{name}:
     get:
-      summary: "Retrieve a user macro"
-      description: "Macro value is only returned if the macro is not marked as secure. "
+      summary: "Retrieve a Private Macro"
+      description: ""
       operationId: "getUserMacro"
       produces:
       - "application/json"
@@ -1166,9 +1127,8 @@ paths:
         404:
           description: "not found"
     put:
-      summary: "Update a user macro"
-      description: "Macro value is only returned if the macro is not marked as secure.\
-        \ Secure macros can only be updated if update is secure. "
+      summary: "Update a Private Macro"
+      description: ""
       operationId: "updateUserMacro"
       consumes:
       - "application/json"
@@ -1201,7 +1161,7 @@ paths:
         404:
           description: "not found"
     delete:
-      summary: "Delete a user macro"
+      summary: "Delete a Private Macro"
       description: ""
       operationId: "deleteUserMacro"
       consumes:
@@ -1246,7 +1206,7 @@ paths:
           description: "unauthorized"
   /users/{id}/preferences:
     post:
-      summary: "Create User Preference info for a designated type"
+      summary: "Create User Preferences for {type}"
       description: ""
       operationId: "createUserPreferenceInfo"
       produces:
@@ -1278,7 +1238,7 @@ paths:
           description: "unauthorized"
   /users/{id}/preferences/{type}:
     get:
-      summary: "Retrieve User Preference info for a designated type"
+      summary: "Retrieve User Preferences for {type}"
       description: ""
       operationId: "getUserPreferenceInfo"
       produces:
@@ -1306,7 +1266,7 @@ paths:
         404:
           description: "not found"
     put:
-      summary: "Overwrite User Preference set for a designated type"
+      summary: "Update User Preferences for {type}"
       description: ""
       operationId: "updateUserPreferenceInfo"
       produces:
@@ -1344,7 +1304,7 @@ paths:
         404:
           description: "not found"
     delete:
-      summary: "Patch User Preference set for a designated type"
+      summary: "Delete User Preferences for {type}"
       description: ""
       operationId: "deleteUserPreferenceInfo"
       produces:
@@ -1370,7 +1330,7 @@ paths:
         404:
           description: "not found"
     patch:
-      summary: "Patch User Preference set for a designated type"
+      summary: "Patch User Preferences for {type}"
       description: ""
       operationId: "patchUserPreferenceInfo"
       produces:
@@ -1444,13 +1404,6 @@ definitions:
         type: "array"
         items:
           type: "string"
-  FeatureResponse:
-    type: "object"
-    properties:
-      featureCode:
-        type: "string"
-      expiration:
-        type: "string"
   FileListResponse:
     type: "object"
     properties:
@@ -1524,21 +1477,6 @@ definitions:
         type: "string"
   InputStream:
     type: "object"
-  LicenseInfoResponse:
-    type: "object"
-    properties:
-      licenseId:
-        type: "string"
-      licenseFile:
-        type: "string"
-      licenseSignatureType:
-        type: "string"
-      licenseStatus:
-        type: "string"
-      features:
-        type: "array"
-        items:
-          $ref: "#/definitions/FeatureResponse"
   LoginAttemptListResponse:
     type: "object"
     properties:

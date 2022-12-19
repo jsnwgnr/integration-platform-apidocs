@@ -3,7 +3,7 @@ swagger: "2.0"
 info:
   description: "Register, List, Manage Remote Agents and Devices."
   version: "3.1.1-SNAPSHOT"
-  title: "Agent Manager"
+  title: "Agents and Devices"
 host: "api.im.actiandatacloud.com"
 schemes:
 - "https"

@@ -1,10 +1,10 @@
 ---
 swagger: "2.0"
 info:
-  description: "Manage access policies."
+  description: "Manage Access Control Policies."
   version: "3.1.1-SNAPSHOT"
-  title: "Account Access Policies and Assignment"
-host: "integration.actiandatacloud.com"
+  title: "Access Control Policies"
+host: "api.im.actiandatacloud.com"
 schemes:
 - "https"
 paths:

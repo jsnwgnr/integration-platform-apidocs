@@ -1,9 +1,9 @@
 ---
 swagger: "2.0"
 info:
-  description: "Retrieve Accounts and Users, Create Users and Update Users."
+  description: "Retrieve Account Info. Create and Update Users."
   version: "3.1.1-SNAPSHOT"
-  title: "Account Manager"
+  title: "Accounts and Users"
 host: "api.im.actiandatacloud.com"
 schemes:
 - "https"

@@ -2300,7 +2300,8 @@ definitions:
       outMessageNames:
         type: "array"
         items:
-          type: "string"ScheduleRequest:
+          type: "string"
+  ScheduleRequest:
     type: "object"
     properties:
       name:

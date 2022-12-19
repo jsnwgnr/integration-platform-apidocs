@@ -1,6 +1,7 @@
 ---
 swagger: "2.0"
 info:
+  description: "Create, Manage and Schedule Job Configurations."
   version: "3.1.1-SNAPSHOT"
   title: "Job Configuration"
 host: "api.im.actiandatacloud.com"

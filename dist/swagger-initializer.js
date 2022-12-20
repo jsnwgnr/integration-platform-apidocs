@@ -5,8 +5,8 @@ window.onload = function() {
   window.ui = SwaggerUIBundle({
     urls: [
 		{url: "apis/account-administration.json", name: "Accounts and Users"},
-		{url: "apis/access-policy-management.yaml", name: "Access Control Policies"},
-		{url: "apis/job-configuration.yaml", name: "Job Configuration"},
+		{url: "apis/access-control-policies.json", name: "Access Control Policies"},
+		{url: "apis/job-configuration.json", name: "Job Configuration"},
 		{url: "apis/agent-management.json", name: "Agents and Devices"}
 	],
     dom_id: '#swagger-ui',

@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: "Manage Access Control Policies."
+  description: "Manage access policies."
   version: "3.1.1-SNAPSHOT"
   title: "Access Control Policies"
 host: "api.im.actiandatacloud.com"

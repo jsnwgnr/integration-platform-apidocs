@@ -1,7 +1,6 @@
 ---
 swagger: "2.0"
 info:
-  description: "Create, Manage and Schedule Job Configurations."
   version: "3.1.1-SNAPSHOT"
   title: "Job Configuration"
 host: "api.im.actiandatacloud.com"
@@ -153,13 +152,6 @@ paths:
         required: false
         type: "boolean"
         default: false
-      - in: "body"
-        name: "body"
-        description: "The package upload must be a multipart form with \"file\" as\
-          \ the key and the file as the value"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -398,12 +390,6 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "file content"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -485,13 +471,6 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "To upload the package use \"file\" as the key and the file as\
-          \ the value."
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "success"
@@ -534,11 +513,6 @@ paths:
         in: "path"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/MultipartFile"
       - in: "body"
         name: "body"
         description: "Page number (zero based)"
@@ -649,7 +623,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/Macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "successful operation"
@@ -704,7 +678,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/Macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "success"
@@ -798,197 +772,6 @@ paths:
       responses:
         200:
           description: "success"
-        401:
-          description: "unauthorized"
-        404:
-          description: "not found"
-  /jobconfigs/{id}/schedules:
-    get:
-      summary: "Retrieve a list of schedules associated with a jobconfig"
-      description: ""
-      operationId: "listSchedules"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "id"
-        in: "path"
-        description: "Resource id"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        description: "Page number (zero based)"
-        required: false
-        schema:
-          type: "string"
-      - in: "body"
-        name: "body"
-        description: "Page size"
-        required: false
-        schema:
-          type: "string"
-      - in: "body"
-        name: "body"
-        description: "Sort by column name"
-        required: false
-        schema:
-          type: "string"
-      - in: "body"
-        name: "body"
-        description: "Sort direction (asc or desc)"
-        required: false
-        schema:
-          type: "string"
-      - in: "body"
-        name: "body"
-        description: "Filter (user name)"
-        required: false
-        schema:
-          type: "string"
-      - name: "Authorization"
-        in: "header"
-        description: "Bearer [access_token]"
-        required: true
-      responses:
-        200:
-          description: "ok"
-          schema:
-            $ref: "#/definitions/ScheduleResponseList"
-        401:
-          description: "unauthorized"
-    post:
-      summary: "Create a jobconfig schedule"
-      description: ""
-      operationId: "createSchedule"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "id"
-        in: "path"
-        description: "Resource id"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        description: "ScheduleRequest"
-        required: true
-        schema:
-          $ref: "#/definitions/ScheduleRequest"
-      - name: "Authorization"
-        in: "header"
-        description: "Bearer [access_token]"
-        required: true
-      responses:
-        200:
-          description: "created"
-          schema:
-            $ref: "#/definitions/ScheduleResponse"
-        201:
-          description: "created"
-          schema:
-            $ref: "#/definitions/ScheduleResponse"
-        401:
-          description: "unauthorized"
-        409:
-          description: "conflict"
-  /jobconfigs/{id}/schedules/{name}:
-    put:
-      summary: "Update a jobconfig schedule"
-      description: ""
-      operationId: "updateSchedule"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "id"
-        in: "path"
-        description: "Resource id"
-        required: true
-        type: "string"
-      - name: "name"
-        in: "path"
-        description: "Schedule key"
-        required: true
-        type: "string"
-      - in: "body"
-        name: "body"
-        description: "ScheduleRequest"
-        required: true
-        schema:
-          $ref: "#/definitions/ScheduleRequest"
-      - name: "Authorization"
-        in: "header"
-        description: "Bearer [access_token]"
-        required: true
-      responses:
-        200:
-          description: "updated"
-          schema:
-            $ref: "#/definitions/ScheduleResponse"
-        401:
-          description: "unauthorized"
-        404:
-          description: "not found"
-  /jobconfigs/{id}/schedules/{scheduleKey}:
-    get:
-      summary: "Retrieve a jobconfig schedule by schedule key"
-      description: ""
-      operationId: "getSchedule"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "id"
-        in: "path"
-        description: "Resource id"
-        required: true
-        type: "string"
-      - name: "scheduleKey"
-        in: "path"
-        description: "Schedule key"
-        required: true
-        type: "string"
-      - name: "Authorization"
-        in: "header"
-        description: "Bearer [access_token]"
-        required: true
-      responses:
-        200:
-          description: "ok"
-          schema:
-            $ref: "#/definitions/ScheduleResponse"
-        401:
-          description: "unauthorized"
-        404:
-          description: "not found"
-    delete:
-      summary: "Delete a jobconfig schedule"
-      description: ""
-      operationId: "deleteSchedule"
-      parameters:
-      - name: "id"
-        in: "path"
-        description: "Resource id"
-        required: true
-        type: "string"
-      - name: "scheduleKey"
-        in: "path"
-        description: "Schedule key"
-        required: true
-        type: "string"
-      - name: "Authorization"
-        in: "header"
-        description: "Bearer [access_token]"
-        required: true
-      responses:
-        200:
-          description: "deleted"
-          schema:
-            $ref: "#/definitions/ResponseEntityObject"
-        204:
-          description: "deleted"
         401:
           description: "unauthorized"
         404:
@@ -1127,13 +910,6 @@ paths:
         required: false
         type: "boolean"
         default: false
-      - in: "body"
-        name: "body"
-        description: "The package upload must be a multipart form with \\\"file\\\"\
-          \ as the key and the file as the value"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -1375,13 +1151,6 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "To upload the package use \"file\" as the key and the file as\
-          \ the value."
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -1464,13 +1233,6 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "To upload the package use \"file\" as the key and the file as\
-          \ the value."
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "success"
@@ -1609,13 +1371,6 @@ paths:
         required: false
         type: "boolean"
         default: false
-      - in: "body"
-        name: "body"
-        description: "The package upload must be a multipart form with \"file\" as\
-          \ the key and the file as the value"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -1643,11 +1398,6 @@ paths:
         in: "path"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/MultipartFile"
       - in: "body"
         name: "body"
         description: "Page number (zero based)"
@@ -1759,7 +1509,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/Macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "successful operation"
@@ -1818,7 +1568,7 @@ paths:
         name: "body"
         required: true
         schema:
-          $ref: "#/definitions/Macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "success"
@@ -2011,8 +1761,6 @@ definitions:
         $ref: "#/definitions/FileMetaData"
       linkId:
         type: "string"
-  InputStream:
-    type: "object"
   JobConfigListResponse:
     type: "object"
     properties:
@@ -2218,6 +1966,30 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/MacroResponse"
+  MacroRequest:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 255
+        pattern: "^[^\\/\\\\]*$"
+      value:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 2752
+      secure:
+        type: "boolean"
+      description:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 2752
   MacroResponse:
     type: "object"
     properties:
@@ -2235,27 +2007,6 @@ definitions:
       lastModified:
         type: "string"
         format: "date-time"
-  MultipartFile:
-    type: "object"
-    properties:
-      name:
-        type: "string"
-      empty:
-        type: "boolean"
-      bytes:
-        type: "array"
-        items:
-          type: "string"
-          format: "byte"
-      size:
-        type: "integer"
-        format: "int64"
-      inputStream:
-        $ref: "#/definitions/InputStream"
-      contentType:
-        type: "string"
-      originalFilename:
-        type: "string"
   Owner:
     type: "object"
     properties:
@@ -2301,85 +2052,6 @@ definitions:
       outMessageNames:
         type: "array"
         items:
-          type: "string"
-  ScheduleRequest:
-    type: "object"
-    properties:
-      name:
-        type: "string"
-      type:
-        type: "string"
-        enum:
-        - "cron"
-        - "interval"
-      cronSchedule:
-        type: "string"
-      intervalFrequency:
-        type: "string"
-      description:
-        type: "string"
-      timeZone:
-        type: "string"
-      webhookConfig:
-        $ref: "#/definitions/WebhookConfig"
-  ScheduleResponse:
-    type: "object"
-    properties:
-      name:
-        type: "string"
-      type:
-        type: "string"
-      cronSchedule:
-        type: "string"
-      intervalFrequency:
-        type: "string"
-      description:
-        type: "string"
-      timeZone:
-        type: "string"
-      resourceId:
-        type: "string"
-      resourceType:
-        type: "string"
-      webhookConfig:
-        $ref: "#/definitions/WebhookConfig"
-  ScheduleResponseList:
-    type: "object"
-    properties:
-      totalRecords:
-        type: "integer"
-        format: "int64"
-      totalPages:
-        type: "integer"
-        format: "int32"
-      size:
-        type: "integer"
-        format: "int32"
-      pageNumber:
-        type: "integer"
-        format: "int32"
-      sortBy:
-        type: "string"
-      direction:
-        type: "string"
-      filter:
-        type: "string"
-      items:
-        type: "array"
-        items:
-          $ref: "#/definitions/ScheduleResponse"
-  WebhookConfig:
-    type: "object"
-    properties:
-      method:
-        type: "string"
-      endpoint:
-        type: "string"
-      payload:
-        type: "string"
-      headers:
-        type: "object"
-        additionalProperties:
           type: "string"
   SubscriptionRequest:
     type: "object"

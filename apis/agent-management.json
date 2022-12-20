@@ -5,10 +5,16 @@
     "title" : "Agents and Devices"
   },
   "host" : "api.im.actiandatacloud.com/v2",
+  "tags" : [ {
+    "name" : "Agent"
+  }, {
+    "name" : "Enterprise Agent"
+  } ],
   "schemes" : [ "https" ],
   "paths" : {
     "/agents" : {
       "get" : {
+        "tags" : [ "Agent" ],
         "summary" : "List Agents in this Account",
         "description" : "",
         "operationId" : "listAgents",
@@ -67,6 +73,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Agent" ],
         "summary" : "Register an Agent",
         "description" : "",
         "operationId" : "registerAgent",
@@ -97,6 +104,7 @@
     },
     "/agents/{id}" : {
       "get" : {
+        "tags" : [ "Agent" ],
         "summary" : "Retrieve Agent Info",
         "description" : "",
         "operationId" : "getAgent",
@@ -121,6 +129,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Agent" ],
         "summary" : "Deregister an Agent",
         "description" : "",
         "operationId" : "deregisterAgent",
@@ -141,6 +150,7 @@
         }
       },
       "patch" : {
+        "tags" : [ "Agent" ],
         "summary" : "Send Control Message to an Agent",
         "description" : "",
         "operationId" : "sendControlMessage",
@@ -174,6 +184,7 @@
     },
     "/agents/{id}/deactivate" : {
       "post" : {
+        "tags" : [ "Agent" ],
         "summary" : "Deactivate an Agent",
         "description" : "",
         "operationId" : "deactivateAgent",
@@ -196,6 +207,7 @@
     },
     "/agents/{id}/destination" : {
       "delete" : {
+        "tags" : [ "Enterprise Agent" ],
         "summary" : "Disable Enterprise Agent",
         "description" : "",
         "operationId" : "removeDestination",
@@ -215,6 +227,7 @@
     },
     "/agents/{id}/destination/{destinationId}" : {
       "post" : {
+        "tags" : [ "Enterprise Agent" ],
         "summary" : "Enable Enterprise Agent - Set Destination Id",
         "description" : "",
         "operationId" : "setDestination",
@@ -239,6 +252,7 @@
     },
     "/agents/{id}/healthcode" : {
       "get" : {
+        "tags" : [ "Agent" ],
         "summary" : "Retrieve Agent Health Code",
         "description" : "",
         "operationId" : "agentHealth",
@@ -264,6 +278,7 @@
     },
     "/agents/{id}/license/default" : {
       "get" : {
+        "tags" : [ "Agent" ],
         "summary" : "Retrieve Agent License",
         "description" : "",
         "operationId" : "getAgentLicenseInfo",
@@ -280,6 +295,7 @@
     },
     "/agents/{id}/log" : {
       "get" : {
+        "tags" : [ "Agent" ],
         "summary" : "Download Agent Log File",
         "description" : "",
         "operationId" : "getAgentLog",
@@ -300,6 +316,7 @@
     },
     "/agents/{id}/owner" : {
       "put" : {
+        "tags" : [ "Agent" ],
         "summary" : "Assign Agent Ownership",
         "description" : "",
         "operationId" : "changeOwner",
@@ -326,6 +343,7 @@
     },
     "/agents/{id}/reactivate" : {
       "post" : {
+        "tags" : [ "Agent" ],
         "summary" : "Reactivate an Agent",
         "description" : "",
         "operationId" : "reactivateAgent",

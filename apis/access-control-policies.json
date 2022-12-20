@@ -6,10 +6,16 @@
     "title" : "Access Control Policies"
   },
   "host" : "api.im.actiandatacloud.com/v2",
+  "tags" : [ {
+    "name" : "Policy"
+  }, {
+    "name" : "Policy Assignment"
+  } ],
   "schemes" : [ "https" ],
   "paths" : {
     "/access/policies" : {
       "get" : {
+        "tags" : [ "Policy" ],
         "summary" : "Retrieve a list of access policies. Rules for each policy will be included, but will eventually be deprecated so that rules must be requested separately. Account Admin role required.",
         "description" : "",
         "operationId" : "getAccessPolicies",
@@ -73,6 +79,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Policy" ],
         "summary" : "Create a new access policy. Account Admin role required.",
         "description" : "",
         "operationId" : "createAccessPolicy",
@@ -113,6 +120,7 @@
     },
     "/access/policies/{id}" : {
       "get" : {
+        "tags" : [ "Policy" ],
         "summary" : "Retrieve an existing access policy, including all it's policy rules. This will eventually be deprecated, so rules should be requested separately. Account Admin role required.",
         "description" : "",
         "operationId" : "getAccessPolicy",
@@ -145,6 +153,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Policy" ],
         "summary" : "Update an existing access policy. Account Admin role required.",
         "description" : "",
         "operationId" : "updateAccessPolicy",
@@ -185,6 +194,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Policy" ],
         "summary" : "Delete an existing access policy. Account Admin role required.",
         "description" : "",
         "operationId" : "deleteAccessPolicy",
@@ -221,6 +231,7 @@
     },
     "/users/access/policies" : {
       "get" : {
+        "tags" : [ "Policy Assignment" ],
         "summary" : "Retrieve a list of access policies for all users in the current account. Account Admin role required.",
         "description" : "",
         "operationId" : "getAllUserAccessPolicies",
@@ -286,6 +297,7 @@
     },
     "/users/{userId}/access/policies" : {
       "get" : {
+        "tags" : [ "Policy Assignment" ],
         "summary" : "Retrieve a list of access policies currently assigned to a user. Account Admin role required.",
         "description" : "",
         "operationId" : "getUserAccessPolicies",
@@ -355,6 +367,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Policy Assignment" ],
         "summary" : "Assign (one or more) access control policies to a user. Account Admin role required.",
         "description" : "",
         "operationId" : "setUserAccessPolicies",
@@ -401,6 +414,7 @@
     },
     "/users/{userId}/access/policies/{accessPolicyId}" : {
       "put" : {
+        "tags" : [ "Policy Assignment" ],
         "summary" : "Assign an access policy to a user. Account Admin role required.",
         "description" : "",
         "operationId" : "putUserAccessPolicy",
@@ -442,6 +456,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Policy Assignment" ],
         "summary" : "Revoke an access policy currently assigned to a user. Account Admin role required.",
         "description" : "",
         "operationId" : "deleteUserAccessPolicy",

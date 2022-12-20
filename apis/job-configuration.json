@@ -8,6 +8,8 @@
   "tags" : [ {
     "name" : "Job Config"
   }, {
+    "name" : "Job Config Bulk APIs"
+  }, {
     "name" : "Job Config Files"
   }, {
     "name" : "Job Config Macros"
@@ -126,7 +128,7 @@
     },
     "/jobconfigs/activate" : {
       "patch" : {
-        "tags" : [ "Job Config" ],
+        "tags" : [ "Job Config Bulk APIs" ],
         "summary" : "Bulk Activation for jobconfig id.",
         "description" : "",
         "operationId" : "bulkActivateJobConfigs",
@@ -143,7 +145,7 @@
     },
     "/jobconfigs/deactivate" : {
       "patch" : {
-        "tags" : [ "Job Config" ],
+        "tags" : [ "Job Config Bulk APIs" ],
         "summary" : "Bulk De-Activation for jobconfig id.",
         "description" : "",
         "operationId" : "bulkDeactivateJobConfigs",
@@ -160,7 +162,7 @@
     },
     "/jobconfigs/delete" : {
       "delete" : {
-        "tags" : [ "Job Config" ],
+        "tags" : [ "Job Config Bulk APIs" ],
         "summary" : "Bulk delete for jobconfig id.",
         "description" : "",
         "operationId" : "bulkDeleteJobConfigs",
@@ -622,7 +624,7 @@
     },
     "/jobconfigs/{id}/files/entrypoints/{key+}" : {
       "get" : {
-        "tags" : [ "Job Config" ],
+        "tags" : [ "Job Config Files" ],
         "summary" : "Retrieve the Entry Points defined inside ANY package attached to a Job Config",
         "description" : "",
         "operationId" : "getJobConfigFileEntryPoints",
@@ -1082,29 +1084,6 @@
           },
           "401" : {
             "description" : "unauthorized"
-          }
-        }
-      },
-      "head" : {
-        "tags" : [ "Job Config" ],
-        "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Config",
-        "description" : "",
-        "operationId" : "checkJobConfigEntryPoints",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "success"
-          },
-          "401" : {
-            "description" : "unauthorized"
-          },
-          "404" : {
-            "description" : "not found"
           }
         }
       }
@@ -1684,7 +1663,7 @@
     },
     "/jobtemplates/{id}/files/entrypoints/{key+}" : {
       "get" : {
-        "tags" : [ "Job Template" ],
+        "tags" : [ "Job Template Files" ],
         "summary" : "Retrieve the Entry Points defined inside ANY package attached to a Job Template",
         "description" : "",
         "operationId" : "getJobTemplateFileEntryPoints",
@@ -2314,29 +2293,6 @@
           },
           "401" : {
             "description" : "unauthorized"
-          }
-        }
-      },
-      "head" : {
-        "tags" : [ "Job Template" ],
-        "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Template",
-        "description" : "",
-        "operationId" : "checkJobTemplateEntryPoints",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "success"
-          },
-          "401" : {
-            "description" : "unauthorized"
-          },
-          "404" : {
-            "description" : "not found"
           }
         }
       }

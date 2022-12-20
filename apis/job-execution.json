@@ -5,10 +5,16 @@
     "title" : "Job Execution"
   },
   "host" : "api.im.actiandatacloud.com/v2",
+  "tags" : [ {
+    "name" : "Job"
+  }, {
+    "name" : "JobStats"
+  } ],
   "schemes" : [ "https" ],
   "paths" : {
     "/jobconfigs/{id}/jobs" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get a list of jobs defined on the Job Config",
         "description" : "",
         "operationId" : "getJobConfigJobs",
@@ -82,6 +88,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job" ],
         "summary" : "Run a new Job on the Job Config",
         "description" : "",
         "operationId" : "runJobConfig",
@@ -124,6 +131,7 @@
     },
     "/jobconfigs/{id}/listener" : {
       "post" : {
+        "tags" : [ "Job" ],
         "summary" : "Run a Job with a text message input.",
         "description" : "",
         "operationId" : "runJobConfigWithMessage",
@@ -187,6 +195,7 @@
     },
     "/jobconfigs/{id}/listener/file" : {
       "post" : {
+        "tags" : [ "Job" ],
         "summary" : "Run a Job asynchronously with a multipart file input. Filename will be available as $(LOCAL_JOB_SPEC_DIR)/filename at runtime.",
         "description" : "",
         "operationId" : "runJobConfigWithFile",
@@ -220,6 +229,7 @@
     },
     "/jobs" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get a list of jobs",
         "description" : "",
         "operationId" : "listJobs",
@@ -309,6 +319,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job" ],
         "summary" : "Run a job",
         "description" : "Running a job directly against this endpoint requires the user to fully build and validate the job's runtime configuration. ",
         "operationId" : "runJob",
@@ -372,6 +383,7 @@
     },
     "/jobs/pending" : {
       "get" : {
+        "tags" : [ "JobStats" ],
         "summary" : "Get a list of jobs",
         "description" : "",
         "operationId" : "pendingJobIds",
@@ -391,6 +403,7 @@
     },
     "/jobs/running" : {
       "get" : {
+        "tags" : [ "JobStats" ],
         "summary" : "Get a list of jobs",
         "description" : "",
         "operationId" : "runningJobIds",
@@ -410,6 +423,7 @@
     },
     "/jobs/stop" : {
       "delete" : {
+        "tags" : [ "Job" ],
         "summary" : "Bulk cancel queued jobs.",
         "description" : "",
         "operationId" : "bulkStopJobs",
@@ -426,6 +440,7 @@
     },
     "/jobs/unfinished" : {
       "get" : {
+        "tags" : [ "JobStats" ],
         "summary" : "Get a list of jobs",
         "description" : "",
         "operationId" : "unfinishedJobIds",
@@ -445,6 +460,7 @@
     },
     "/jobs/{id}" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get job info",
         "description" : "",
         "operationId" : "getJob",
@@ -471,6 +487,7 @@
         }
       },
       "head" : {
+        "tags" : [ "Job" ],
         "summary" : "Confirm job is ok to run",
         "description" : "",
         "operationId" : "isJobRunnable",
@@ -487,6 +504,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job" ],
         "summary" : "Abort a job",
         "description" : "",
         "operationId" : "stopJob",
@@ -512,6 +530,7 @@
     },
     "/jobs/{id}/getJobStatus" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get Job Status",
         "description" : "",
         "operationId" : "getJobStatus",
@@ -530,6 +549,7 @@
     },
     "/jobs/{id}/log" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get a job's log file",
         "description" : "",
         "operationId" : "getJobLog",
@@ -558,6 +578,7 @@
     },
     "/jobs/{id}/out" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Lists job out messages",
         "description" : "",
         "operationId" : "getJobOutMessages",
@@ -635,6 +656,7 @@
     },
     "/jobs/{id}/out/files" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "List the Files on the Job Config",
         "description" : "",
         "operationId" : "getJobOutputFiles",
@@ -700,7 +722,8 @@
     },
     "/jobs/{id}/out/files/{key}" : {
       "get" : {
-        "summary" : "Retrieve a Job Config File",
+        "tags" : [ "Job" ],
+        "summary" : "Retrieve a Job Output File",
         "description" : "",
         "operationId" : "getJobOutputFile",
         "produces" : [ "application/octet-stream" ],
@@ -728,6 +751,7 @@
     },
     "/jobs/{id}/out/{messagename}" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get a job output message",
         "description" : "",
         "operationId" : "getJobOutMessage",
@@ -761,6 +785,7 @@
     },
     "/jobs/{id}/out/{messagename}/text" : {
       "get" : {
+        "tags" : [ "Job" ],
         "summary" : "Get a job output message as text",
         "description" : "",
         "operationId" : "getJobOutMessageText",
@@ -794,6 +819,7 @@
     },
     "/jobstats" : {
       "get" : {
+        "tags" : [ "JobStats" ],
         "summary" : "Get job statistics",
         "description" : "",
         "operationId" : "getJobStats",
@@ -847,6 +873,7 @@
     },
     "/listener/{alias}" : {
       "post" : {
+        "tags" : [ "Job" ],
         "summary" : "Run a Job listener by alias with an input message accessible to the job",
         "description" : "",
         "operationId" : "runAliasWithMessage",

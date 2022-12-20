@@ -100,18 +100,12 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "file content"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
           schema:
             $ref: "#/definitions/FileResponse"
-  /account/{id}/files/entrypoints/{key+}:
+  /account/{id}/files/entrypoints/{key}:
     get:
       summary: "Retrieve EntryPoints for a Public Package File"
       description: ""
@@ -134,7 +128,7 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/EntryPoints"
-  /account/{id}/files/{key+}:
+  /account/{id}/files/{key}:
     get:
       summary: "Download a Public File"
       description: ""
@@ -174,12 +168,6 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "file content"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -270,12 +258,6 @@ paths:
         description: "ID of the Account."
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "MacroDef file, supported extensions JSON & XML."
-        required: true
-        schema:
-          $ref: "#/definitions/MultipartFile"
       - in: "body"
         name: "body"
         description: "Page number (zero based)"
@@ -377,6 +359,8 @@ paths:
       summary: "Create a Public Macro"
       description: ""
       operationId: "createAccountMacro"
+      consumes:
+      - "application/json"
       produces:
       - "application/json"
       parameters:
@@ -387,10 +371,10 @@ paths:
         type: "string"
       - in: "body"
         name: "body"
-        description: "JSON body for a macro."
+        description: "MacroRequest"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "successful operation"
@@ -454,10 +438,10 @@ paths:
         type: "string"
       - in: "body"
         name: "body"
-        description: "JSON body for a macro update."
+        description: "MacroRequest"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "success"
@@ -791,18 +775,12 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "file content"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
           schema:
             $ref: "#/definitions/FileResponse"
-  /users/{id}/files/entrypoints/{key+}:
+  /users/{id}/files/entrypoints/{key}:
     get:
       summary: "Retrieve EntryPoints for a Private Package File"
       description: ""
@@ -825,7 +803,7 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/EntryPoints"
-  /users/{id}/files/{key+}:
+  /users/{id}/files/{key}:
     get:
       summary: "Download a Private File"
       description: ""
@@ -865,12 +843,6 @@ paths:
         description: "file name"
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "file content"
-        required: false
-        schema:
-          $ref: "#/definitions/MultipartFile"
       responses:
         200:
           description: "successful operation"
@@ -961,12 +933,6 @@ paths:
         description: "ID of the User."
         required: true
         type: "string"
-      - in: "body"
-        name: "body"
-        description: "MacroDef file, supported extensions JSON & XML."
-        required: true
-        schema:
-          $ref: "#/definitions/MultipartFile"
       - in: "body"
         name: "body"
         description: "Page number (zero based)"
@@ -1078,10 +1044,10 @@ paths:
         type: "string"
       - in: "body"
         name: "body"
-        description: "JSON for a Macro."
+        description: "MacroRequest"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "successful operation"
@@ -1147,10 +1113,10 @@ paths:
         type: "string"
       - in: "body"
         name: "body"
-        description: "JSON for a Macro update."
+        description: "MacroRequest"
         required: true
         schema:
-          $ref: "#/definitions/macro"
+          $ref: "#/definitions/MacroRequest"
       responses:
         200:
           description: "success"
@@ -1475,8 +1441,6 @@ definitions:
         $ref: "#/definitions/FileMetaData"
       linkId:
         type: "string"
-  InputStream:
-    type: "object"
   LoginAttemptListResponse:
     type: "object"
     properties:
@@ -1544,6 +1508,30 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/MacroResponse"
+  MacroRequest:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 255
+        pattern: "^[^\\/\\\\]*$"
+      value:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 2752
+      secure:
+        type: "boolean"
+      description:
+        type: "string"
+        xml:
+          attribute: true
+        minLength: 0
+        maxLength: 2752
   MacroResponse:
     type: "object"
     properties:
@@ -1561,27 +1549,6 @@ definitions:
       lastModified:
         type: "string"
         format: "date-time"
-  MultipartFile:
-    type: "object"
-    properties:
-      name:
-        type: "string"
-      empty:
-        type: "boolean"
-      bytes:
-        type: "array"
-        items:
-          type: "string"
-          format: "byte"
-      size:
-        type: "integer"
-        format: "int64"
-      inputStream:
-        $ref: "#/definitions/InputStream"
-      contentType:
-        type: "string"
-      originalFilename:
-        type: "string"
   Reference:
     type: "object"
     properties:
@@ -1796,27 +1763,3 @@ definitions:
         format: "date-time"
       lastModifiedByUser:
         $ref: "#/definitions/Reference"
-  macro:
-    type: "object"
-    properties:
-      name:
-        type: "string"
-        xml:
-          attribute: true
-        minLength: 0
-        maxLength: 255
-        pattern: "^[^\\/\\\\]*$"
-      value:
-        type: "string"
-        xml:
-          attribute: true
-        minLength: 0
-        maxLength: 2752
-      secure:
-        type: "boolean"
-      description:
-        type: "string"
-        xml:
-          attribute: true
-        minLength: 0
-        maxLength: 2752

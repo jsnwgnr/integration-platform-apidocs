@@ -1,7 +1,6 @@
 ---
 swagger: "2.0"
 info:
-  description: "Register, List, Manage Remote Agents and Devices."
   version: "3.1.1-SNAPSHOT"
   title: "Agents and Devices"
 host: "api.im.actiandatacloud.com"
@@ -10,7 +9,7 @@ schemes:
 paths:
   /agents:
     get:
-      summary: "Get a List of agents"
+      summary: "List Agents in this Account"
       description: ""
       operationId: "listAgents"
       produces:
@@ -54,7 +53,7 @@ paths:
         404:
           description: "Not Found"
     post:
-      summary: "Register an agent"
+      summary: "Register an Agent"
       description: ""
       operationId: "registerAgent"
       produces:
@@ -74,23 +73,9 @@ paths:
           description: "Bad Request"
           schema:
             $ref: "#/definitions/ApiErrorResponse"
-  /agents/blacklist/{hostname}:
-    post:
-      summary: "Blacklist a hostname from being used as an agent"
-      description: ""
-      operationId: "blacklistHostname"
-      parameters:
-      - name: "hostname"
-        in: "path"
-        description: "Agent hostname"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "OK"
   /agents/{id}:
     get:
-      summary: "Retrieve an agent"
+      summary: "Retrieve Agent Info"
       description: ""
       operationId: "getAgent"
       produces:
@@ -109,7 +94,7 @@ paths:
         404:
           description: "Not Found"
     delete:
-      summary: "Deregister an agent"
+      summary: "Deregister an Agent"
       description: ""
       operationId: "deregisterAgent"
       parameters:
@@ -124,7 +109,7 @@ paths:
         404:
           description: "Not Found"
     patch:
-      summary: "Send control message to agent"
+      summary: "Send Control Message to an Agent"
       description: ""
       operationId: "sendControlMessage"
       parameters:
@@ -148,7 +133,7 @@ paths:
           description: "Not Found"
   /agents/{id}/deactivate:
     post:
-      summary: "Deactivate an agent"
+      summary: "Deactivate an Agent"
       description: ""
       operationId: "deactivateAgent"
       parameters:
@@ -164,7 +149,7 @@ paths:
           description: "Not Found"
   /agents/{id}/destination:
     delete:
-      summary: "Remove an agent destination connection"
+      summary: "Disable Enterprise Agent"
       description: ""
       operationId: "removeDestination"
       parameters:
@@ -178,7 +163,7 @@ paths:
           description: "OK"
   /agents/{id}/destination/{destinationId}:
     post:
-      summary: "Enable an agent to connect to a specific destination"
+      summary: "Enable Enterprise Agent - Set Destination Id"
       description: ""
       operationId: "setDestination"
       parameters:
@@ -196,7 +181,7 @@ paths:
           description: "OK"
   /agents/{id}/healthcode:
     get:
-      summary: "Get agent health"
+      summary: "Retrieve Agent Health Code"
       description: ""
       operationId: "agentHealth"
       parameters:
@@ -214,7 +199,7 @@ paths:
           description: "Not Found"
   /agents/{id}/license/default:
     get:
-      summary: "Retrieve license used for this agent"
+      summary: "Retrieve Agent License"
       description: ""
       operationId: "getAgentLicenseInfo"
       produces:
@@ -227,7 +212,7 @@ paths:
             $ref: "#/definitions/LicenseInfoResponse"
   /agents/{id}/log:
     get:
-      summary: "Retrieve an agent log file"
+      summary: "Download Agent Log File"
       description: ""
       operationId: "getAgentLog"
       produces:
@@ -243,7 +228,7 @@ paths:
           description: "successful operation"
   /agents/{id}/owner:
     put:
-      summary: "Assign a new owner to this agent"
+      summary: "Assign Agent Ownership"
       description: ""
       operationId: "changeOwner"
       consumes:
@@ -264,7 +249,7 @@ paths:
           description: "unauthorized"
   /agents/{id}/reactivate:
     post:
-      summary: "Reactivate an agent"
+      summary: "Reactivate an Agent"
       description: ""
       operationId: "reactivateAgent"
       parameters:

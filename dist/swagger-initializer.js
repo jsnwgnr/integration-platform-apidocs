@@ -7,7 +7,7 @@ window.onload = function() {
 		{url: "apis/account-administration.json", name: "Accounts and Users"},
 		{url: "apis/access-policy-management.yaml", name: "Access Control Policies"},
 		{url: "apis/job-configuration.yaml", name: "Job Configuration"},
-		{url: "apis/agent-management.yaml", name: "Agents and Devices"}
+		{url: "apis/agent-management.json", name: "Agents and Devices"}
 	],
     dom_id: '#swagger-ui',
     deepLinking: true,

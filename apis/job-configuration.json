@@ -4,11 +4,25 @@
     "version" : "3.1.1-SNAPSHOT",
     "title" : "Job Configuration"
   },
-  "host" : "api.im.actiandatacloud.com",
+  "host" : "api.im.actiandatacloud.com/v2",
+  "tags" : [ {
+    "name" : "Job Config"
+  }, {
+    "name" : "Job Config Files"
+  }, {
+    "name" : "Job Config Macros"
+  }, {
+    "name" : "Job Template"
+  }, {
+    "name" : "Job Template Files"
+  }, {
+    "name" : "Job Template Macros"
+  } ],
   "schemes" : [ "https" ],
   "paths" : {
     "/jobconfigs" : {
       "get" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Get a List of Job Configs",
         "description" : "",
         "operationId" : "getJobConfigs",
@@ -74,6 +88,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Create a new Job Config",
         "description" : "",
         "operationId" : "createJobConfig",
@@ -111,6 +126,7 @@
     },
     "/jobconfigs/activate" : {
       "patch" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Bulk Activation for jobconfig id.",
         "description" : "",
         "operationId" : "bulkActivateJobConfigs",
@@ -127,6 +143,7 @@
     },
     "/jobconfigs/deactivate" : {
       "patch" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Bulk De-Activation for jobconfig id.",
         "description" : "",
         "operationId" : "bulkDeactivateJobConfigs",
@@ -143,6 +160,7 @@
     },
     "/jobconfigs/delete" : {
       "delete" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Bulk delete for jobconfig id.",
         "description" : "",
         "operationId" : "bulkDeleteJobConfigs",
@@ -159,6 +177,7 @@
     },
     "/jobconfigs/package" : {
       "post" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Create a new Job Config from a djar package",
         "description" : "Upload a djar package, set an entrypoint by providing rtc or entrypoint to the job config. If no rtc or entrypoint is provided, an entrypoint is set by default.",
         "operationId" : "createJobConfigFromPackage",
@@ -208,6 +227,7 @@
     },
     "/jobconfigs/{id}" : {
       "get" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Get a Job Config",
         "description" : "",
         "operationId" : "getJobConfig",
@@ -231,6 +251,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Update an existing Job Config",
         "description" : "",
         "operationId" : "updateJobConfig",
@@ -268,6 +289,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Delete a Job Config",
         "description" : "",
         "operationId" : "deleteJobConfig",
@@ -287,6 +309,7 @@
         }
       },
       "patch" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Patch an existing Job Config",
         "description" : "",
         "operationId" : "patchJobConfig",
@@ -326,6 +349,7 @@
     },
     "/jobconfigs/{id}/clone" : {
       "post" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Clone a Job Config",
         "description" : "",
         "operationId" : "cloneJobConfig",
@@ -362,6 +386,7 @@
     },
     "/jobconfigs/{id}/favorites" : {
       "post" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Sets the job config as a user favorite.",
         "description" : "",
         "operationId" : "createJobConfigFavorite",
@@ -394,6 +419,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Unsets the job config as a user favorite",
         "description" : "",
         "operationId" : "deleteJobConfigFavorite",
@@ -487,6 +513,7 @@
     },
     "/jobconfigs/{id}/files" : {
       "get" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "List the Files on the Job Config",
         "description" : "",
         "operationId" : "listJobConfigFiles",
@@ -550,6 +577,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "Create a new File on the Job Config",
         "description" : "Request body contents will be saved to the file contents. ",
         "operationId" : "createJobConfigFile",
@@ -592,7 +620,8 @@
     },
     "/jobconfigs/{id}/files/entrypoints/{key+}" : {
       "get" : {
-        "summary" : "Retrieve the Entry Points defined inside ANY package attached to a Job Template",
+        "tags" : [ "Job Config" ],
+        "summary" : "Retrieve the Entry Points defined inside ANY package attached to a Job Config",
         "description" : "",
         "operationId" : "getJobConfigFileEntryPoints",
         "produces" : [ "application/json" ],
@@ -626,6 +655,7 @@
     },
     "/jobconfigs/{id}/files/{key}" : {
       "get" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "Retrieve a Job Config File",
         "description" : "",
         "operationId" : "getJobConfigFile",
@@ -652,6 +682,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "Update a Job Config File",
         "description" : "Request body contents will be saved to the file contents. ",
         "operationId" : "updateJobConfigFile",
@@ -683,6 +714,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "Delete a Job Config File",
         "description" : "",
         "operationId" : "deleteJobConfigFile",
@@ -711,6 +743,7 @@
     },
     "/jobconfigs/{id}/macrodef" : {
       "post" : {
+        "tags" : [ "Job Config Macros" ],
         "summary" : "Import distinct Macros from MacroDef file to Job Config",
         "description" : "Macro value is only returned if the macro is not marked as secure. Secure macros can only be updated if update is secure.",
         "operationId" : "importJobConfigMacroDef",
@@ -786,6 +819,7 @@
     },
     "/jobconfigs/{id}/macros" : {
       "get" : {
+        "tags" : [ "Job Config Macros" ],
         "summary" : "List the Macros on the Job Config",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "listJobConfigMacros",
@@ -849,6 +883,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Config Macros" ],
         "summary" : "Create a Job Config Macro",
         "description" : "Macro value is only returned if the macro is not marked as secure. Secure macros can only be updated if update is secure.",
         "operationId" : "createJobConfigMacro",
@@ -885,6 +920,7 @@
     },
     "/jobconfigs/{id}/macros/{name}" : {
       "get" : {
+        "tags" : [ "Job Config Macros" ],
         "summary" : "Get a Job Config Macro",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "getJobConfigMacro",
@@ -913,6 +949,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Job Config Macros" ],
         "summary" : "Update a Job Config Macro",
         "description" : "Macro value is only returned if the macro is not marked as secure. Secure macros can only be updated if update is secure.",
         "operationId" : "updateJobConfigMacro",
@@ -955,6 +992,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Config Macros" ],
         "summary" : "Delete a Job Config Macro",
         "description" : "",
         "operationId" : "deleteJobConfigMacro",
@@ -981,6 +1019,7 @@
     },
     "/jobconfigs/{id}/owner" : {
       "put" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Assigns new owner to the Config",
         "description" : "",
         "operationId" : "updateJobConfigOwner",
@@ -1021,7 +1060,8 @@
     },
     "/jobconfigs/{id}/package/entrypoints" : {
       "get" : {
-        "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Template",
+        "tags" : [ "Job Config" ],
+        "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Config",
         "description" : "",
         "operationId" : "getJobConfigEntryPoints",
         "produces" : [ "application/json" ],
@@ -1044,6 +1084,7 @@
         }
       },
       "head" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Config",
         "description" : "",
         "operationId" : "checkJobConfigEntryPoints",
@@ -1068,6 +1109,7 @@
     },
     "/jobconfigs/{id}/subscription" : {
       "post" : {
+        "tags" : [ "Job Config" ],
         "summary" : "Create a subscription to a job config",
         "description" : "",
         "operationId" : "createSubscriptionToJobConfig",
@@ -1104,6 +1146,7 @@
     },
     "/jobtemplates" : {
       "get" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Get a list of Job Templates",
         "description" : "",
         "operationId" : "getJobTemplates",
@@ -1169,6 +1212,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Create a Job Template",
         "description" : "",
         "operationId" : "createJobTemplate",
@@ -1206,6 +1250,7 @@
     },
     "/jobtemplates/package" : {
       "post" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Create a new Job Template from a djar package",
         "description" : "Upload a djar package, set an entrypoint by providing rtc or entrypoint to the job template. If no rtc or entrypoint is provided, an entrypoint is set by default.",
         "operationId" : "createJobTemplateFromPackage",
@@ -1255,6 +1300,7 @@
     },
     "/jobtemplates/{id}" : {
       "get" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Get a Job Template",
         "description" : "",
         "operationId" : "getJobTemplate",
@@ -1278,6 +1324,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Update a job Template",
         "description" : "",
         "operationId" : "updateJobTemplate",
@@ -1315,6 +1362,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Delete a Job Template",
         "description" : "",
         "operationId" : "deleteJobTemplate",
@@ -1339,6 +1387,7 @@
         }
       },
       "patch" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Patch a job Template",
         "description" : "",
         "operationId" : "patchJobTemplate",
@@ -1378,6 +1427,7 @@
     },
     "/jobtemplates/{id}/clone" : {
       "post" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Clone a Job Template",
         "description" : "",
         "operationId" : "cloneJobTemplate",
@@ -1411,6 +1461,7 @@
     },
     "/jobtemplates/{id}/favorites" : {
       "post" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Sets the job template as a user favorite.",
         "description" : "",
         "operationId" : "createJobTemplateFavorite",
@@ -1443,6 +1494,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Unsets the job template as a user favorite",
         "description" : "",
         "operationId" : "deleteJobTemplateFavorite",
@@ -1520,6 +1572,7 @@
     },
     "/jobtemplates/{id}/files" : {
       "get" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Get a List of Job Template Files",
         "description" : "",
         "operationId" : "listJobTemplateFiles",
@@ -1584,6 +1637,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Create a new Job Template File",
         "description" : "Request body contents will be saved to the file contents. ",
         "operationId" : "createJobTemplateFile",
@@ -1626,6 +1680,7 @@
     },
     "/jobtemplates/{id}/files/entrypoints/{key+}" : {
       "get" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Retrieve the Entry Points defined inside ANY package attached to a Job Template",
         "description" : "",
         "operationId" : "getJobTemplateFileEntryPoints",
@@ -1660,6 +1715,7 @@
     },
     "/jobtemplates/{id}/files/{key}" : {
       "get" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Get a Job Template File",
         "description" : "",
         "operationId" : "getJobTemplateFile",
@@ -1687,6 +1743,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Update a Job Template File",
         "description" : "Request body contents will be saved to the file contents. ",
         "operationId" : "updateJobTemplateFile",
@@ -1718,6 +1775,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Delete a Job Template File",
         "description" : "",
         "operationId" : "deleteJobTemplateFile",
@@ -1749,6 +1807,7 @@
     },
     "/jobtemplates/{id}/jobconfigs" : {
       "get" : {
+        "tags" : [ "Job Template" ],
         "summary" : "List the Job Configs on the Job Template",
         "description" : "",
         "operationId" : "getJobTemplateJobConfigs",
@@ -1812,6 +1871,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Create a Job Config on a Job Template",
         "description" : "",
         "operationId" : "createJobTemplateJobConfig",
@@ -1848,6 +1908,7 @@
     },
     "/jobtemplates/{id}/jobconfigs/package" : {
       "post" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Create a new Job Config from a djar package",
         "description" : "Upload a djar package, set an entrypoint by providing rtc or entrypoint to the job config. If no rtc or entrypoint is provided, an entrypoint is set by default.",
         "operationId" : "createJobTemplateJobConfigFromPackage",
@@ -1903,6 +1964,7 @@
     },
     "/jobtemplates/{id}/macrodef" : {
       "post" : {
+        "tags" : [ "Job Template Macros" ],
         "summary" : "Import distinct Macros from MacroDef file to Job Template",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "importJobTemplateMacroDef",
@@ -1981,6 +2043,7 @@
     },
     "/jobtemplates/{id}/macros" : {
       "get" : {
+        "tags" : [ "Job Template Macros" ],
         "summary" : "List the Macros on the Job Template",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "listJobTemplateMacros",
@@ -2044,6 +2107,7 @@
         }
       },
       "post" : {
+        "tags" : [ "Job Template Macros" ],
         "summary" : "Create a Macro on the Job Template",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "createJobTemplateMacro",
@@ -2086,6 +2150,7 @@
     },
     "/jobtemplates/{id}/macros/{name}" : {
       "get" : {
+        "tags" : [ "Job Template Macros" ],
         "summary" : "Get a Macro from the Job Template",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "getJobTemplateMacro",
@@ -2114,6 +2179,7 @@
         }
       },
       "put" : {
+        "tags" : [ "Job Template Macros" ],
         "summary" : "Update a Macro on the Job Template",
         "description" : "Macro value is only returned if the macro is not marked as secure. Secure macros can only be updated if update is secure.",
         "operationId" : "updateJobTemplateMacro",
@@ -2156,6 +2222,7 @@
         }
       },
       "delete" : {
+        "tags" : [ "Job Template Macros" ],
         "summary" : "Delete a Macro on a Job Template",
         "description" : "",
         "operationId" : "deleteJobTemplateMacro",
@@ -2182,6 +2249,7 @@
     },
     "/jobtemplates/{id}/owner" : {
       "put" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Assigns new owner to the Template",
         "description" : "",
         "operationId" : "updateJobTemplateOwner",
@@ -2222,6 +2290,7 @@
     },
     "/jobtemplates/{id}/package/entrypoints" : {
       "get" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Template",
         "description" : "",
         "operationId" : "getJobTemplateEntryPoints",
@@ -2245,6 +2314,7 @@
         }
       },
       "head" : {
+        "tags" : [ "Job Template" ],
         "summary" : "Retrieve the Entry Points defined inside the SELECTED package on a Job Template",
         "description" : "",
         "operationId" : "checkJobTemplateEntryPoints",

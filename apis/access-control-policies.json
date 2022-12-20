@@ -5,7 +5,7 @@
     "version" : "3.1.1-SNAPSHOT",
     "title" : "Access Control Policies"
   },
-  "host" : "api.im.actiandatacloud.com",
+  "host" : "api.im.actiandatacloud.com/v2",
   "schemes" : [ "https" ],
   "paths" : {
     "/access/policies" : {

@@ -5,7 +5,7 @@
     "version" : "3.1.1-SNAPSHOT",
     "title" : "Account and Users"
   },
-  "host" : "api.im.actiandatacloud.com",
+  "host" : "api.im.actiandatacloud.com/v2",
   "tags" : [ {
     "name" : "Account"
   }, {
@@ -53,7 +53,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the account to list files.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -130,7 +130,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "account id",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -160,7 +160,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "account id",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -190,7 +190,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "account id",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -216,7 +216,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "account id",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -243,7 +243,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "account id",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -270,7 +270,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the account to list the login attempts for.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -343,7 +343,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the Account.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -422,7 +422,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the Account.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -491,13 +491,13 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the Account.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "MacroRequest",
+          "description" : "MacroRequest object",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/MacroRequest"
@@ -541,7 +541,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the Account.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -575,7 +575,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the Account.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -617,7 +617,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the Account to delete the macro from.",
+          "description" : "Account Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -778,7 +778,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ExternalId of the user to retrieve.",
+          "description" : "ExternalId of the User to retrieve",
           "required" : true,
           "type" : "string"
         } ],
@@ -879,7 +879,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the user to retrieve.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         } ],
@@ -908,13 +908,13 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the user to update.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "JSON body for the updated user.",
+          "description" : "UserRequest object",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/UserRequest"
@@ -946,7 +946,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the user to list files from.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1023,7 +1023,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "user id",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1053,7 +1053,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "user id",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1083,7 +1083,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "user id",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1109,7 +1109,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "user id",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1136,7 +1136,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "user id",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1163,7 +1163,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the user to list the login attempts for.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1236,7 +1236,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1312,7 +1312,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1381,7 +1381,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1431,7 +1431,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1466,7 +1466,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1509,7 +1509,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1542,7 +1542,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         } ],
@@ -1566,7 +1566,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1610,7 +1610,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1647,7 +1647,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1698,7 +1698,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -1732,7 +1732,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
-          "description" : "ID of the User.",
+          "description" : "User Id",
           "required" : true,
           "type" : "string"
         }, {

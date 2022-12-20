@@ -413,6 +413,78 @@
         }
       }
     },
+    "/jobconfigs/{id}/filelinks" : {
+      "post" : {
+        "summary" : "Create JobConfig File Link",
+        "description" : "",
+        "operationId" : "createJobConfigFileLink",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/FileLinkRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileResponse"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "409" : {
+            "description" : "Conflict"
+          }
+        }
+      }
+    },
+    "/jobconfigs/{id}/filelinks/{linkid}" : {
+      "delete" : {
+        "summary" : "Delete Jobconfig File Link",
+        "description" : "",
+        "operationId" : "deleteJobConfigFileLink",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        }
+      }
+    },
     "/jobconfigs/{id}/files" : {
       "get" : {
         "summary" : "List the Files on the Job Config",
@@ -1390,6 +1462,62 @@
         }
       }
     },
+    "/jobtemplates/{id}/filelinks" : {
+      "post" : {
+        "summary" : "Create JobTemplate File Link",
+        "description" : "",
+        "operationId" : "createJobTemplateFileLink",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/FileLinkRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/FileResponse"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "409" : {
+            "description" : "Conflict"
+          }
+        }
+      }
+    },
+    "/jobtemplates/{id}/filelinks/{linkid}" : {
+      "delete" : {
+        "summary" : "Delete Jobtemplate File Link",
+        "description" : "",
+        "operationId" : "deleteJobTemplateFileLink",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "204" : {
+            "description" : "No Content"
+          }
+        }
+      }
+    },
     "/jobtemplates/{id}/files" : {
       "get" : {
         "summary" : "Get a List of Job Template Files",
@@ -2138,6 +2266,80 @@
           }
         }
       }
+    },
+    "/{entitytype}/{entityid}/filelinks/{name}" : {
+      "get" : {
+        "summary" : "List All File Links",
+        "description" : "",
+        "operationId" : "listAllFileLinks",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page number (zero based)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page size",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort by column name",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort direction (asc or desc)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Filter (resource ID)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/FileListResponse"
+            }
+          },
+          "404" : {
+            "description" : "Not found"
+          }
+        }
+      }
     }
   },
   "definitions" : {
@@ -2174,6 +2376,24 @@
         },
         "user" : {
           "$ref" : "#/definitions/Reference"
+        }
+      }
+    },
+    "FileLinkRequest" : {
+      "type" : "object",
+      "properties" : {
+        "entityType" : {
+          "type" : "string",
+          "enum" : [ "ACCOUNT", "GROUP", "USER", "PROVISIONING", "LICENSE", "JOBTEMPLATE", "JOBCONFIG", "JOB", "OUTPUT", "TEMP", "AGENT", "NONE" ]
+        },
+        "entityId" : {
+          "type" : "string"
+        },
+        "fileName" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
         }
       }
     },

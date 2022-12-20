@@ -5,6 +5,7 @@ window.onload = function() {
   window.ui = SwaggerUIBundle({
     urls: [
 		{url: "apis/job-configuration.json", name: "Job Configuration"},
+		{url: "apis/job-execution.json", name: "Job Execution"},
 		{url: "apis/job-config-aliasing.json", name: "JobConfig Aliasing"},
 		{url: "apis/agent-management.json", name: "Agents and Devices"},
 		{url: "apis/account-administration.json", name: "Accounts and Users"},

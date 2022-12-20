@@ -1,0 +1,1421 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "3.1.1-SNAPSHOT",
+    "title" : "Job Execution"
+  },
+  "host" : "api.im.actiandatacloud.com",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/jobconfigs/{id}/jobs" : {
+      "get" : {
+        "summary" : "Get a list of jobs defined on the Job Config",
+        "description" : "",
+        "operationId" : "getJobConfigJobs",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "startdate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enddate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page number (zero based)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page size",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort by column name",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort direction (asc or desc)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Filter (job name)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/JobListResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Run a new Job on the Job Config",
+        "description" : "",
+        "operationId" : "runJobConfig",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/RuntimeConfig"
+          }
+        }, {
+          "name" : "ordered",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "default" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
+          },
+          "202" : {
+            "description" : "accepted"
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobconfigs/{id}/listener" : {
+      "post" : {
+        "summary" : "Run a Job with a text message input.",
+        "description" : "",
+        "operationId" : "runJobConfigWithMessage",
+        "consumes" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
+        "produces" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "messagename",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "outmessagename",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "async",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "ordered",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "default" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "created"
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobconfigs/{id}/listener/file" : {
+      "post" : {
+        "summary" : "Run a Job asynchronously with a multipart file input. Filename will be available as $(LOCAL_JOB_SPEC_DIR)/filename at runtime.",
+        "description" : "",
+        "operationId" : "runJobConfigWithFile",
+        "consumes" : [ "application/octet-stream", "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ordered",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "default" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs" : {
+      "get" : {
+        "summary" : "Get a list of jobs",
+        "description" : "",
+        "operationId" : "listJobs",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "jobtemplateid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "jobconfigid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "state",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "enum" : [ "waiting", "queued", "initializing", "running", "finished_all", "finished_ok", "finished_error", "cancelled", "aborted", "unknown" ]
+        }, {
+          "name" : "startdate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enddate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page number (zero based)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page size",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort by column name",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort direction (asc or desc)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Filter (job name)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/JobListResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Run a job",
+        "description" : "Running a job directly against this endpoint requires the user to fully build and validate the job's runtime configuration. ",
+        "operationId" : "runJob",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/JobRequest"
+          }
+        }, {
+          "name" : "targetId",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "wait",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "ordered",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "default" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "headers" : {
+              "location" : {
+                "type" : "string",
+                "description" : "resource location"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
+          },
+          "201" : {
+            "description" : "created",
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
+          },
+          "400" : {
+            "description" : "not runnable",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/pending" : {
+      "get" : {
+        "summary" : "Get a list of jobs",
+        "description" : "",
+        "operationId" : "pendingJobIds",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/BulkOperation"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/running" : {
+      "get" : {
+        "summary" : "Get a list of jobs",
+        "description" : "",
+        "operationId" : "runningJobIds",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/BulkOperation"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/stop" : {
+      "delete" : {
+        "summary" : "Bulk cancel queued jobs.",
+        "description" : "",
+        "operationId" : "bulkStopJobs",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "204" : {
+            "description" : "success"
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/unfinished" : {
+      "get" : {
+        "summary" : "Get a list of jobs",
+        "description" : "",
+        "operationId" : "unfinishedJobIds",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/BulkOperation"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/{id}" : {
+      "get" : {
+        "summary" : "Get job info",
+        "description" : "",
+        "operationId" : "getJob",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "404" : {
+            "description" : "not found"
+          }
+        }
+      },
+      "head" : {
+        "summary" : "Confirm job is ok to run",
+        "description" : "",
+        "operationId" : "isJobRunnable",
+        "responses" : {
+          "200" : {
+            "description" : "yes",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseEntity"
+            }
+          },
+          "410" : {
+            "description" : "no"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Abort a job",
+        "description" : "",
+        "operationId" : "stopJob",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "success"
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "404" : {
+            "description" : "not found"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/getJobStatus" : {
+      "get" : {
+        "summary" : "Get Job Status",
+        "description" : "",
+        "operationId" : "getJobStatus",
+        "responses" : {
+          "200" : {
+            "description" : "unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/log" : {
+      "get" : {
+        "summary" : "Get a job's log file",
+        "description" : "",
+        "operationId" : "getJobLog",
+        "produces" : [ "application/octet-stream" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success"
+          },
+          "401" : {
+            "description" : "unauthorized",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "404" : {
+            "description" : "not found"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/out" : {
+      "get" : {
+        "summary" : "Lists job out messages",
+        "description" : "",
+        "operationId" : "getJobOutMessages",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Job Id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page number (zero based)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page size",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort by column name",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort direction (asc or desc)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Filter (message)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/BaseListResponseTextMessage"
+            }
+          },
+          "201" : {
+            "description" : "created"
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/out/files" : {
+      "get" : {
+        "summary" : "List the Files on the Job Config",
+        "description" : "",
+        "operationId" : "getJobOutputFiles",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page number (zero based)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Page size",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort by column name",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Sort direction (asc or desc)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Filter (job name)",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/FileListResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/out/files/{key}" : {
+      "get" : {
+        "summary" : "Retrieve a Job Config File",
+        "description" : "",
+        "operationId" : "getJobOutputFile",
+        "produces" : [ "application/octet-stream" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "key",
+          "in" : "path",
+          "description" : "filename",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success"
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/out/{messagename}" : {
+      "get" : {
+        "summary" : "Get a job output message",
+        "description" : "",
+        "operationId" : "getJobOutMessage",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "messagename",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/TextMessage"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "404" : {
+            "description" : "not found"
+          }
+        }
+      }
+    },
+    "/jobs/{id}/out/{messagename}/text" : {
+      "get" : {
+        "summary" : "Get a job output message as text",
+        "description" : "",
+        "operationId" : "getJobOutMessageText",
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "messagename",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          },
+          "404" : {
+            "description" : "not found"
+          }
+        }
+      }
+    },
+    "/jobstats" : {
+      "get" : {
+        "summary" : "Get job statistics",
+        "description" : "",
+        "operationId" : "getJobStats",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "jobtemplateid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "jobconfigid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "userid",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "startdate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enddate",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "filter",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "success",
+            "schema" : {
+              "$ref" : "#/definitions/JobStatsResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    },
+    "/listener/{alias}" : {
+      "post" : {
+        "summary" : "Run a Job listener by alias with an input message accessible to the job",
+        "description" : "",
+        "operationId" : "runAliasWithMessage",
+        "consumes" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
+        "produces" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
+        "parameters" : [ {
+          "name" : "alias",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "messagename",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "outmessagename",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "async",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "ordered",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "x-property-name",
+          "in" : "header",
+          "description" : "Custom input message properties can be added using Http Request headers in the format of 'x-property-name' if desired",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "x-api-key",
+          "in" : "header",
+          "description" : "If ONLY api key is set, then it must be supplied via the 'x-api-key' header",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Authorization: Basic",
+          "in" : "header",
+          "description" : "If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of Base64Encode(api-key:api-secret)",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Authorization: Bearer",
+          "in" : "header",
+          "description" : "Authorization: Bearer tokens from a successful login call are always accepted within the same account",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ApiErrorResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BaseListResponse" : {
+      "type" : "object",
+      "properties" : {
+        "totalRecords" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageNumber" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortBy" : {
+          "type" : "string"
+        },
+        "direction" : {
+          "type" : "string"
+        },
+        "filter" : {
+          "type" : "string"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object"
+          }
+        }
+      }
+    },
+    "BaseListResponseTextMessage" : {
+      "type" : "object",
+      "properties" : {
+        "totalRecords" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageNumber" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortBy" : {
+          "type" : "string"
+        },
+        "direction" : {
+          "type" : "string"
+        },
+        "filter" : {
+          "type" : "string"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TextMessage"
+          }
+        }
+      }
+    },
+    "BulkOperation" : {
+      "type" : "object",
+      "properties" : {
+        "recordIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "FileListResponse" : {
+      "type" : "object",
+      "properties" : {
+        "totalRecords" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pageNumber" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortBy" : {
+          "type" : "string"
+        },
+        "direction" : {
+          "type" : "string"
+        },
+        "filter" : {
+          "type" : "string"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FileResponse"
+          }
+        }
+      }
+    },
+    "FileMetaData" : {
+      "type" : "object",
+      "properties" : {
+        "size" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "lastModified" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "entityType" : {
+          "type" : "string",
+          "enum" : [ "ACCOUNT", "GROUP", "USER", "PROVISIONING", "LICENSE", "JOBTEMPLATE", "JOBCONFIG", "JOB", "OUTPUT", "TEMP", "AGENT", "NONE" ]
+        },
+        "entityId" : {
+          "type" : "string"
+        },
+        "linkType" : {
+          "type" : "string",
+          "enum" : [ "LINK", "INHERITED", "LOCAL" ]
+        },
+        "linkId" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "FileResponse" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/FileMetaData"
+        },
+        "linkId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "JobListResponse" : {
+      "type" : "object",
+      "properties" : {
+        "totalRecords" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "pageNumber" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "stats" : {
+          "$ref" : "#/definitions/JobStatsResponse"
+        },
+        "size" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "sortBy" : {
+          "type" : "string"
+        },
+        "direction" : {
+          "type" : "string"
+        },
+        "filter" : {
+          "type" : "string"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/JobResponse"
+          }
+        }
+      }
+    },
+    "JobMetrics" : {
+      "type" : "object",
+      "properties" : {
+        "recordsRead" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "recordsWritten" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "recordsDiscarded" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "JobRequest" : {
+      "type" : "object",
+      "properties" : {
+        "runtimeConfig" : {
+          "$ref" : "#/definitions/RuntimeConfig"
+        },
+        "destination" : {
+          "type" : "string"
+        },
+        "engine" : {
+          "type" : "string"
+        },
+        "jobTemplate" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "jobConfig" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "submittedByUser" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "fileList" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "string"
+          }
+        },
+        "tags" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        }
+      }
+    },
+    "JobResponse" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        },
+        "scheduled" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "received" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "started" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "finished" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "currentStep" : {
+          "type" : "string"
+        },
+        "returnCode" : {
+          "type" : "string"
+        },
+        "finalDestinationId" : {
+          "type" : "string"
+        },
+        "serverId" : {
+          "type" : "string"
+        },
+        "outMessages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TextMessage"
+          }
+        },
+        "jobLog" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "jobTemplate" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "jobConfig" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "submittedByUser" : {
+          "$ref" : "#/definitions/Reference"
+        },
+        "tags" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        },
+        "jobMetrics" : {
+          "$ref" : "#/definitions/JobMetrics"
+        }
+      }
+    },
+    "JobStatsResponse" : {
+      "type" : "object",
+      "properties" : {
+        "queued" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "running" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "finished" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "error" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "failed" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "cancelled" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Macro" : {
+      "type" : "object",
+      "properties" : {
+        "key" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "secure" : {
+          "type" : "boolean"
+        },
+        "description" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Property" : {
+      "type" : "object",
+      "properties" : {
+        "key" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Reference" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ResponseEntity" : {
+      "type" : "object",
+      "properties" : {
+        "headers" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body" : {
+          "type" : "object"
+        },
+        "statusCode" : {
+          "type" : "string",
+          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
+        },
+        "statusCodeValue" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "RuntimeConfig" : {
+      "type" : "object",
+      "properties" : {
+        "packageName" : {
+          "type" : "string"
+        },
+        "entryPoint" : {
+          "type" : "string"
+        },
+        "logLevel" : {
+          "type" : "string"
+        },
+        "packageArtifactOverride" : {
+          "type" : "boolean"
+        },
+        "packagePrefix" : {
+          "type" : "string"
+        },
+        "macros" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Macro"
+          }
+        },
+        "inMessages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TextMessage"
+          }
+        },
+        "outMessageNames" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "TextMessage" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "body" : {
+          "type" : "string"
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        },
+        "href" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

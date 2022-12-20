@@ -9,9 +9,17 @@
   "tags" : [ {
     "name" : "Account"
   }, {
-    "name" : "User Preferences"
+    "name" : "Account Files"
   }, {
-    "name" : "Users"
+    "name" : "Account Macros"
+  }, {
+    "name" : "User"
+  }, {
+    "name" : "User Files"
+  }, {
+    "name" : "User Macros"
+  }, {
+    "name" : "User Preferences"
   } ],
   "schemes" : [ "https" ],
   "paths" : {
@@ -37,7 +45,7 @@
     },
     "/account/{id}/files" : {
       "get" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Files" ],
         "summary" : "List Public Files in this Account",
         "description" : "",
         "operationId" : "listAccountFiles",
@@ -113,7 +121,7 @@
         }
       },
       "post" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Files" ],
         "summary" : "Create a Public File",
         "description" : "",
         "operationId" : "createAccountFile",
@@ -144,7 +152,7 @@
     },
     "/account/{id}/files/entrypoints/{key}" : {
       "get" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Files" ],
         "summary" : "Retrieve EntryPoints for a Public Package File",
         "description" : "",
         "operationId" : "listAccountFileEntryPoints",
@@ -174,7 +182,7 @@
     },
     "/account/{id}/files/{key}" : {
       "get" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Files" ],
         "summary" : "Download a Public File",
         "description" : "",
         "operationId" : "getAccountFile",
@@ -199,7 +207,7 @@
         }
       },
       "put" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Files" ],
         "summary" : "Update a Public File",
         "description" : "",
         "operationId" : "updateAccountFile",
@@ -228,7 +236,7 @@
         }
       },
       "delete" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Files" ],
         "summary" : "Delete a Public File",
         "description" : "",
         "operationId" : "deleteAccountFile",
@@ -327,7 +335,7 @@
     },
     "/account/{id}/macrodef" : {
       "post" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Macros" ],
         "summary" : "Import MacroDef file to Public Macros",
         "description" : "",
         "operationId" : "importAccountMacroDef",
@@ -406,7 +414,7 @@
     },
     "/account/{id}/macros" : {
       "get" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Macros" ],
         "summary" : "List Public Macros in this Account",
         "description" : "",
         "operationId" : "listAccountMacros",
@@ -474,7 +482,7 @@
         }
       },
       "post" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Macros" ],
         "summary" : "Create a Public Macro",
         "description" : "",
         "operationId" : "createAccountMacro",
@@ -525,7 +533,7 @@
     },
     "/account/{id}/macros/{name}" : {
       "get" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Macros" ],
         "summary" : "Retrieve a Public Macro",
         "description" : "",
         "operationId" : "getAccountMacro",
@@ -559,7 +567,7 @@
         }
       },
       "put" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Macros" ],
         "summary" : "Update a Public Macro",
         "description" : "",
         "operationId" : "updateAccountMacro",
@@ -601,7 +609,7 @@
         }
       },
       "delete" : {
-        "tags" : [ "Account" ],
+        "tags" : [ "Account Macros" ],
         "summary" : "Delete a Public Macro",
         "description" : "",
         "operationId" : "deleteAccountMacro",
@@ -634,7 +642,7 @@
     },
     "/user" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Retrieve User Info",
         "description" : "",
         "operationId" : "getCurrentUser",
@@ -657,7 +665,7 @@
     },
     "/users" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "List Users in this Account",
         "description" : "",
         "operationId" : "listUsers",
@@ -723,7 +731,7 @@
         }
       },
       "post" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Create a User",
         "description" : "",
         "operationId" : "createUser",
@@ -762,7 +770,7 @@
     },
     "/users/externalid/{id}" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Retrieve User Info by External Id",
         "description" : "",
         "operationId" : "getUserByExternalId",
@@ -792,7 +800,7 @@
     },
     "/users/metrics" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Retrieve User Metrics",
         "description" : "",
         "operationId" : "getUserMetrics",
@@ -863,7 +871,7 @@
     },
     "/users/{id}" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Retrieve User Info",
         "description" : "",
         "operationId" : "getUser",
@@ -891,7 +899,7 @@
         }
       },
       "put" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Update User Info",
         "description" : "",
         "operationId" : "updateUser",
@@ -930,7 +938,7 @@
     },
     "/users/{id}/files" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Files" ],
         "summary" : "List Private Files for this User",
         "description" : "",
         "operationId" : "listUserFiles",
@@ -1006,7 +1014,7 @@
         }
       },
       "post" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Files" ],
         "summary" : "Create a Private File",
         "description" : "",
         "operationId" : "createUserFile",
@@ -1037,7 +1045,7 @@
     },
     "/users/{id}/files/entrypoints/{key}" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Files" ],
         "summary" : "Retrieve EntryPoints for a Private Package File",
         "description" : "",
         "operationId" : "listUserFileEntryPoints",
@@ -1067,7 +1075,7 @@
     },
     "/users/{id}/files/{key}" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Files" ],
         "summary" : "Download a Private File",
         "description" : "",
         "operationId" : "getUserFile",
@@ -1092,7 +1100,7 @@
         }
       },
       "put" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Files" ],
         "summary" : "Update a Private File",
         "description" : "",
         "operationId" : "updateUserFile",
@@ -1121,7 +1129,7 @@
         }
       },
       "delete" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Files" ],
         "summary" : "Delete a Private File",
         "description" : "",
         "operationId" : "deleteUserFile",
@@ -1147,7 +1155,7 @@
     },
     "/users/{id}/logins" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Get User Login History",
         "description" : "",
         "operationId" : "listUserLoginHistory",
@@ -1220,7 +1228,7 @@
     },
     "/users/{id}/macrodef" : {
       "post" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Macros" ],
         "summary" : "Import MacroDef file to Private Macros",
         "description" : "",
         "operationId" : "importUserMacroDef",
@@ -1296,7 +1304,7 @@
     },
     "/users/{id}/macros" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Macros" ],
         "summary" : "List Private Macros for this User",
         "description" : "",
         "operationId" : "listUserMacros",
@@ -1364,7 +1372,7 @@
         }
       },
       "post" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Macros" ],
         "summary" : "Create a Private Macro",
         "description" : "",
         "operationId" : "createUserMacro",
@@ -1415,7 +1423,7 @@
     },
     "/users/{id}/macros/{name}" : {
       "get" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Macros" ],
         "summary" : "Retrieve a Private Macro",
         "description" : "",
         "operationId" : "getUserMacro",
@@ -1449,7 +1457,7 @@
         }
       },
       "put" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Macros" ],
         "summary" : "Update a Private Macro",
         "description" : "",
         "operationId" : "updateUserMacro",
@@ -1492,7 +1500,7 @@
         }
       },
       "delete" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User Macros" ],
         "summary" : "Delete a Private Macro",
         "description" : "",
         "operationId" : "deleteUserMacro",
@@ -1526,7 +1534,7 @@
     },
     "/users/{id}/password" : {
       "post" : {
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
         "summary" : "Change your API Password",
         "description" : "",
         "operationId" : "changePassword",

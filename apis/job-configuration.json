@@ -441,6 +441,7 @@
     },
     "/jobconfigs/{id}/filelinks" : {
       "post" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "Create JobConfig File Link",
         "description" : "",
         "operationId" : "createJobConfigFileLink",
@@ -484,6 +485,7 @@
     },
     "/jobconfigs/{id}/filelinks/{linkid}" : {
       "delete" : {
+        "tags" : [ "Job Config Files" ],
         "summary" : "Delete Jobconfig File Link",
         "description" : "",
         "operationId" : "deleteJobConfigFileLink",
@@ -1516,6 +1518,7 @@
     },
     "/jobtemplates/{id}/filelinks" : {
       "post" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Create JobTemplate File Link",
         "description" : "",
         "operationId" : "createJobTemplateFileLink",
@@ -1559,6 +1562,7 @@
     },
     "/jobtemplates/{id}/filelinks/{linkid}" : {
       "delete" : {
+        "tags" : [ "Job Template Files" ],
         "summary" : "Delete Jobtemplate File Link",
         "description" : "",
         "operationId" : "deleteJobTemplateFileLink",
@@ -2333,80 +2337,6 @@
           },
           "404" : {
             "description" : "not found"
-          }
-        }
-      }
-    },
-    "/{entitytype}/{entityid}/filelinks/{name}" : {
-      "get" : {
-        "summary" : "List All File Links",
-        "description" : "",
-        "operationId" : "listAllFileLinks",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Page number (zero based)",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Page size",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Sort by column name",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Sort direction (asc or desc)",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "in" : "body",
-          "name" : "body",
-          "description" : "Filter (resource ID)",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "schema" : {
-              "$ref" : "#/definitions/FileListResponse"
-            }
-          },
-          "404" : {
-            "description" : "Not found"
           }
         }
       }

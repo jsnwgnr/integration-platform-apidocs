@@ -82,7 +82,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -121,7 +121,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -141,7 +141,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -161,7 +161,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -181,7 +181,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -234,7 +234,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -263,7 +263,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -304,7 +304,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -327,7 +327,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "patch" : {
@@ -368,7 +368,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -408,7 +408,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -446,7 +446,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -469,7 +469,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -514,7 +514,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -543,7 +543,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -602,7 +602,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -646,7 +646,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -684,7 +684,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -716,7 +716,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -751,7 +751,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -781,7 +781,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -850,7 +850,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -909,7 +909,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -947,7 +947,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -981,7 +981,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -1027,7 +1027,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -1055,7 +1055,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1099,7 +1099,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1128,7 +1128,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1167,7 +1167,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -1213,7 +1213,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -1259,7 +1259,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -1298,7 +1298,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1358,7 +1358,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1398,7 +1398,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1459,7 +1459,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -1498,7 +1498,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1551,7 +1551,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1580,7 +1580,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -1621,7 +1621,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -1649,7 +1649,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "patch" : {
@@ -1690,7 +1690,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1727,7 +1727,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1765,7 +1765,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -1788,7 +1788,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1833,7 +1833,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1850,7 +1850,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1910,7 +1910,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -1954,7 +1954,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1992,7 +1992,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2025,7 +2025,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -2060,7 +2060,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -2093,7 +2093,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2152,7 +2152,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -2190,7 +2190,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2249,7 +2249,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2321,7 +2321,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2380,7 +2380,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -2424,7 +2424,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2458,7 +2458,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "put" : {
@@ -2504,7 +2504,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -2532,7 +2532,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2576,7 +2576,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -2605,13 +2605,13 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     }
   },
   "securityDefinitions" : {
-    "Authorization: Bearer" : {
+    "Bearer token" : {
       "description" : "Enter Authorization Header value in the format of 'Bearer [jwt token value]'. See https://datatracker.ietf.org/doc/rfc6750/.",
       "type" : "apiKey",
       "name" : "authorization",

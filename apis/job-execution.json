@@ -78,7 +78,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -122,7 +122,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -189,9 +189,9 @@
           }
         },
         "security" : [ {
-          "Authorization: Basic" : [ ]
+          "Basic authorization" : [ ]
         }, {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -228,9 +228,9 @@
           }
         },
         "security" : [ {
-          "Authorization: Basic" : [ ]
+          "Basic authorization" : [ ]
         }, {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -281,9 +281,9 @@
           }
         },
         "security" : [ {
-          "Authorization: Basic" : [ ]
+          "Basic authorization" : [ ]
         }, {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -368,7 +368,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "post" : {
@@ -433,7 +433,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -456,7 +456,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -479,7 +479,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -499,7 +499,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -522,7 +522,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -554,7 +554,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "head" : {
@@ -574,7 +574,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       },
       "delete" : {
@@ -601,7 +601,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -623,7 +623,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -655,7 +655,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -726,7 +726,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -785,7 +785,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -817,7 +817,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -854,7 +854,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -891,7 +891,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -948,7 +948,7 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     },
@@ -1012,30 +1012,30 @@
           }
         },
         "security" : [ {
-          "Authorization: Basic" : [ ]
+          "Basic authorization" : [ ]
         }, {
-          "AliasApiKey" : [ ]
+          "xApiKey" : [ ]
         }, {
-          "Authorization: Bearer" : [ ]
+          "Bearer token" : [ ]
         } ]
       }
     }
   },
   "securityDefinitions" : {
-    "AliasApiKey" : {
-      "description" : "Enter x-api-key provided for Alias access. Value is typically unique to each Alias.",
-      "type" : "apiKey",
-      "name" : "x-api-key",
-      "in" : "header"
-    },
-    "Authorization: Basic" : {
+    "Basic authorization" : {
       "description" : "This can also be used for api key (username) and api secret (password) provided for Alias access. Values are typically unique to each Alias.",
       "type" : "basic"
     },
-    "Authorization: Bearer" : {
+    "Bearer token" : {
       "description" : "Enter Authorization Header value in the format of 'Bearer [jwt token value]'. See https://datatracker.ietf.org/doc/rfc6750/.",
       "type" : "apiKey",
       "name" : "authorization",
+      "in" : "header"
+    },
+    "xApiKey" : {
+      "description" : "Enter x-api-key provided for Alias access. Value is typically unique to each Alias.",
+      "type" : "apiKey",
+      "name" : "x-api-key",
       "in" : "header"
     }
   },

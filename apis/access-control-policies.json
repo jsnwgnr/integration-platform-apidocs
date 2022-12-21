@@ -21,45 +21,35 @@
         "operationId" : "getAccessPolicies",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (access policy name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "name" : "Authorization",
           "in" : "header",
@@ -237,45 +227,35 @@
         "operationId" : "getAllUserAccessPolicies",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (user name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "name" : "Authorization",
           "in" : "header",
@@ -309,45 +289,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (user name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "name" : "Authorization",
           "in" : "header",

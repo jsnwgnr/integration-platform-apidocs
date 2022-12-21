@@ -39,45 +39,35 @@
           "type" : "boolean",
           "default" : false
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (job configuration name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -451,12 +441,10 @@
         "operationId" : "createJobConfigFileLink",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
+          "name" : "id",
+          "in" : "path",
           "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "in" : "body",
           "name" : "body",
@@ -495,20 +483,16 @@
         "operationId" : "deleteJobConfigFileLink",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
+          "name" : "id",
+          "in" : "path",
           "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "linkId",
+          "in" : "path",
           "required" : true,
-          "schema" : {
-            "type" : "integer",
-            "format" : "int64"
-          }
+          "type" : "integer",
+          "format" : "int64"
         } ],
         "responses" : {
           "204" : {
@@ -530,45 +514,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (file name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -761,45 +735,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (macro name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -836,45 +800,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (macro name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -1282,45 +1236,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (user name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "name" : "Authorization",
           "in" : "header",
@@ -1392,45 +1336,35 @@
           "type" : "boolean",
           "default" : false
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (job template name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -1755,12 +1689,10 @@
         "operationId" : "createJobTemplateFileLink",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
+          "name" : "id",
+          "in" : "path",
           "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "in" : "body",
           "name" : "body",
@@ -1819,45 +1751,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (access policy name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -2053,45 +1975,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (job config name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -2211,45 +2123,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (macro name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -2289,45 +2191,35 @@
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "offset",
+          "in" : "query",
           "description" : "Page number (zero based)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "size",
+          "in" : "query",
           "description" : "Page size",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "sortby",
+          "in" : "query",
           "description" : "Sort by column name",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "direction",
+          "in" : "query",
           "description" : "Sort direction (asc or desc)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "Filter (macro name)",
           "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {

@@ -1366,6 +1366,11 @@
           "description" : "Filter (job template name)",
           "required" : false,
           "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Bearer [access_token]",
+          "required" : true
         } ],
         "responses" : {
           "200" : {

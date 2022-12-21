@@ -356,6 +356,9 @@
     }
   },
   "securityDefinitions" : {
+    "basicAuth" : {
+      "type" : "basic"
+    },
     "bearerTokenJwt" : {
       "description" : "Authorization: Bearer [jwt]",
       "type" : "apiKey",

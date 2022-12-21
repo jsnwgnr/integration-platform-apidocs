@@ -4,7 +4,8 @@
     "version" : "3.1.1-SNAPSHOT",
     "title" : "Job Config Aliasing"
   },
-  "host" : "api.im.actiandatacloud.com/v2",
+  "host" : "api.im.actiandatacloud.com",
+  "basePath" : "/v2/api",
   "tags" : [ {
     "name" : "Alias"
   }, {
@@ -524,10 +525,7 @@
     }
   },
   "securityDefinitions" : {
-    "basicAuth" : {
-      "type" : "basic"
-    },
-    "bearerTokenJwt" : {
+    "Authorization: Bearer" : {
       "description" : "Authorization: Bearer [jwt]",
       "type" : "apiKey",
       "name" : "Authorization",

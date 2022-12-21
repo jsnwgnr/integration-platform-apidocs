@@ -5,7 +5,8 @@
     "version" : "3.1.1-SNAPSHOT",
     "title" : "Account and Users"
   },
-  "host" : "api.im.actiandatacloud.com/v2",
+  "host" : "api.im.actiandatacloud.com",
+  "basePath" : "/v2/api",
   "tags" : [ {
     "name" : "Account"
   }, {
@@ -1673,10 +1674,7 @@
     }
   },
   "securityDefinitions" : {
-    "basicAuth" : {
-      "type" : "basic"
-    },
-    "bearerTokenJwt" : {
+    "Authorization: Bearer" : {
       "description" : "Authorization: Bearer [jwt]",
       "type" : "apiKey",
       "name" : "Authorization",

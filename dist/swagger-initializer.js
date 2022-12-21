@@ -20,7 +20,10 @@ window.onload = function() {
     plugins: [
       SwaggerUIBundle.plugins.DownloadUrl
     ],
-    layout: "StandaloneLayout"
+    layout: "StandaloneLayout",
+	showExtensions: true,
+	tryItOutEnabled: true,
+	persistAuthorization: true
   });
 
   //</editor-fold>

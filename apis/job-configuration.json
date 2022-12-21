@@ -4,7 +4,7 @@
     "version" : "3.1.1-SNAPSHOT",
     "title" : "Job Configuration"
   },
-  "host" : "api.im.actiandatacloud.com",
+  "host" : "api.dev.actiandatacloud.com",
   "basePath" : "/v2/api",
   "tags" : [ {
     "name" : "Job Config"
@@ -1366,11 +1366,6 @@
           "description" : "Filter (job template name)",
           "required" : false,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -1382,7 +1377,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Template" ],

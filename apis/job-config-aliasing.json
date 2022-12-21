@@ -523,6 +523,14 @@
       }
     }
   },
+  "securityDefinitions" : {
+    "bearerTokenJwt" : {
+      "description" : "Authorization: Bearer [jwt]",
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  },
   "definitions" : {
     "AliasAccessKeyResponse" : {
       "type" : "object",

@@ -2442,6 +2442,14 @@
       }
     }
   },
+  "securityDefinitions" : {
+    "bearerTokenJwt" : {
+      "description" : "Authorization: Bearer [jwt]",
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  },
   "definitions" : {
     "ApiErrorResponse" : {
       "type" : "object",

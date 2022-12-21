@@ -76,7 +76,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job" ],
@@ -117,7 +122,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/listener" : {
@@ -181,7 +191,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/listener/file" : {
@@ -215,7 +230,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs" : {
@@ -297,7 +317,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job" ],
@@ -359,7 +384,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/pending" : {
@@ -379,7 +409,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/running" : {
@@ -399,7 +434,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/stop" : {
@@ -416,7 +456,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/unfinished" : {
@@ -436,7 +481,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}" : {
@@ -465,7 +515,12 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       },
       "head" : {
         "tags" : [ "Job" ],
@@ -482,7 +537,12 @@
           "410" : {
             "description" : "no"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job" ],
@@ -506,7 +566,12 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/getJobStatus" : {
@@ -525,7 +590,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/log" : {
@@ -554,7 +624,12 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/out" : {
@@ -622,7 +697,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/out/files" : {
@@ -678,7 +758,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/out/files/{key}" : {
@@ -707,7 +792,12 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/out/{messagename}" : {
@@ -741,7 +831,12 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobs/{id}/out/{messagename}/text" : {
@@ -775,7 +870,12 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/jobstats" : {
@@ -829,14 +929,19 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     },
     "/listener/{alias}" : {
       "post" : {
         "tags" : [ "Job" ],
         "summary" : "Run a Job listener by alias with an input message accessible to the job",
-        "description" : "",
+        "description" : "JobConfig Alias Authorization Schemes:\n  - Authorization: Basic and Authorization: Bearer [jwt token] are always accepted within the same account  - If ONLY api key is set, then it must be supplied via the 'x-api-key' header  - If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of Base64Encode(api-key:api-secret)",
         "operationId" : "runAliasWithMessage",
         "consumes" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
         "produces" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
@@ -886,15 +991,9 @@
           "required" : false,
           "type" : "string"
         }, {
-          "name" : "Authorization: Basic",
+          "name" : "Authorization",
           "in" : "header",
-          "description" : "If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of Base64Encode(api-key:api-secret)",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "Authorization: Bearer",
-          "in" : "header",
-          "description" : "Authorization: Bearer tokens from a successful login call are always accepted within the same account",
+          "description" : "If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of 'Basic Base64Encode(api-key:api-secret)'",
           "required" : false,
           "type" : "string"
         } ],
@@ -914,11 +1013,19 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        }, {
+          "Authorization: Basic" : [ ]
+        } ]
       }
     }
   },
   "securityDefinitions" : {
+    "Authorization: Basic" : {
+      "type" : "basic"
+    },
     "Authorization: Bearer" : {
       "description" : "Enter Authorization Header value in the format of 'Bearer [jwt token value]'. See https://datatracker.ietf.org/doc/rfc6750/.",
       "type" : "apiKey",

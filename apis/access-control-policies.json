@@ -51,11 +51,6 @@
           "description" : "Filter (access policy name)",
           "required" : false,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -67,7 +62,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Policy" ],
@@ -84,11 +82,6 @@
           "schema" : {
             "$ref" : "#/definitions/AccessPolicyRequest"
           }
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -106,7 +99,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/access/policies/{id}" : {
@@ -122,11 +118,6 @@
           "description" : "Access policy id",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -141,7 +132,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Policy" ],
@@ -163,11 +157,6 @@
           "schema" : {
             "$ref" : "#/definitions/AccessPolicyRequest"
           }
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -182,7 +171,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Policy" ],
@@ -195,11 +187,6 @@
           "description" : "Access policy id",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -217,7 +204,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/access/policies" : {
@@ -257,11 +247,6 @@
           "description" : "Filter (user name)",
           "required" : false,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -273,7 +258,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{userId}/access/policies" : {
@@ -319,11 +307,6 @@
           "description" : "Filter (user name)",
           "required" : false,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -335,7 +318,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Policy Assignment" ],
@@ -358,11 +344,6 @@
           "description" : "User id",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -380,7 +361,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{userId}/access/policies/{accessPolicyId}" : {
@@ -402,11 +386,6 @@
           "description" : "Access Policy id",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -424,7 +403,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Policy Assignment" ],
@@ -443,11 +425,6 @@
           "description" : "Access Policy id",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -465,7 +442,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     }
   },

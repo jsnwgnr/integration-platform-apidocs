@@ -61,7 +61,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Agent" ],
@@ -69,14 +72,6 @@
         "description" : "",
         "operationId" : "registerAgent",
         "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "$ref" : "#/definitions/AgentRequest"
-          }
-        } ],
         "responses" : {
           "200" : {
             "description" : "Registered",
@@ -90,7 +85,10 @@
               "$ref" : "#/definitions/ApiErrorResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}" : {
@@ -117,7 +115,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Agent" ],
@@ -138,7 +139,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "patch" : {
         "tags" : [ "Agent" ],
@@ -170,7 +174,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/deactivate" : {
@@ -193,7 +200,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/destination" : {
@@ -213,7 +223,10 @@
           "200" : {
             "description" : "OK"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/destination/{destinationId}" : {
@@ -238,7 +251,10 @@
           "200" : {
             "description" : "OK"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/healthcode" : {
@@ -264,7 +280,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/license/default" : {
@@ -281,7 +300,10 @@
               "$ref" : "#/definitions/LicenseInfoResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/log" : {
@@ -302,7 +324,10 @@
           "default" : {
             "description" : "successful operation"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/owner" : {
@@ -329,7 +354,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/agents/{id}/reactivate" : {
@@ -352,7 +380,10 @@
           "404" : {
             "description" : "Not Found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     }
   },
@@ -398,35 +429,6 @@
           "items" : {
             "$ref" : "#/definitions/AgentResponse"
           }
-        }
-      }
-    },
-    "AgentRequest" : {
-      "type" : "object",
-      "properties" : {
-        "hostname" : {
-          "type" : "string"
-        },
-        "ipAddress" : {
-          "type" : "string"
-        },
-        "version" : {
-          "type" : "string"
-        },
-        "os" : {
-          "type" : "string"
-        },
-        "worker" : {
-          "type" : "string"
-        },
-        "engine" : {
-          "type" : "string"
-        },
-        "dataflow" : {
-          "type" : "string"
-        },
-        "destinationId" : {
-          "type" : "string"
         }
       }
     },

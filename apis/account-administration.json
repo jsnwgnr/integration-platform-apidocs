@@ -41,7 +41,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/files" : {
@@ -107,7 +110,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Account Files" ],
@@ -136,7 +142,10 @@
               "$ref" : "#/definitions/FileResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/files/entrypoints/{key}" : {
@@ -166,7 +175,10 @@
               "$ref" : "#/definitions/EntryPoints"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/files/{key}" : {
@@ -193,7 +205,10 @@
           "default" : {
             "description" : "successful operation"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Account Files" ],
@@ -222,7 +237,10 @@
               "$ref" : "#/definitions/FileResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Account Files" ],
@@ -246,7 +264,10 @@
           "default" : {
             "description" : "successful operation"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/logins" : {
@@ -309,7 +330,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/macrodef" : {
@@ -378,7 +402,10 @@
           "500" : {
             "description" : "server exception"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/macros" : {
@@ -438,7 +465,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Account Macros" ],
@@ -487,7 +517,10 @@
           "409" : {
             "description" : "conflict"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/account/{id}/macros/{name}" : {
@@ -523,7 +556,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Account Macros" ],
@@ -565,7 +601,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Account Macros" ],
@@ -596,7 +635,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/user" : {
@@ -619,7 +661,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users" : {
@@ -677,7 +722,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "User" ],
@@ -714,7 +762,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/externalid/{id}" : {
@@ -744,7 +795,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/metrics" : {
@@ -805,7 +859,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}" : {
@@ -835,7 +892,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "User" ],
@@ -872,7 +932,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/files" : {
@@ -938,7 +1001,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "User Files" ],
@@ -967,7 +1033,10 @@
               "$ref" : "#/definitions/FileResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/files/entrypoints/{key}" : {
@@ -997,7 +1066,10 @@
               "$ref" : "#/definitions/EntryPoints"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/files/{key}" : {
@@ -1024,7 +1096,10 @@
           "default" : {
             "description" : "successful operation"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "User Files" ],
@@ -1053,7 +1128,10 @@
               "$ref" : "#/definitions/FileResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "User Files" ],
@@ -1077,7 +1155,10 @@
           "default" : {
             "description" : "successful operation"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/logins" : {
@@ -1140,7 +1221,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/macrodef" : {
@@ -1206,7 +1290,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/macros" : {
@@ -1266,7 +1353,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "User Macros" ],
@@ -1315,7 +1405,10 @@
           "409" : {
             "description" : "conflict"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/macros/{name}" : {
@@ -1351,7 +1444,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "User Macros" ],
@@ -1394,7 +1490,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "User Macros" ],
@@ -1426,7 +1525,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/password" : {
@@ -1450,7 +1552,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/preferences" : {
@@ -1494,7 +1599,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/users/{id}/preferences/{type}" : {
@@ -1533,7 +1641,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "User Preferences" ],
@@ -1584,7 +1695,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "User Preferences" ],
@@ -1618,7 +1732,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "patch" : {
         "tags" : [ "User Preferences" ],
@@ -1669,7 +1786,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     }
   },

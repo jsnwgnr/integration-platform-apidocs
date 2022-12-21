@@ -63,7 +63,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Alias" ],
@@ -99,7 +102,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfig-aliases/{id}" : {
@@ -125,7 +131,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Alias" ],
@@ -163,7 +172,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Alias" ],
@@ -183,7 +195,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfig-aliases/{name}/accesskey" : {
@@ -209,7 +224,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Alias Access Control" ],
@@ -241,7 +259,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Alias Access Control" ],
@@ -270,7 +291,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Alias Access Control" ],
@@ -290,7 +314,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfig-aliases/{name}/allowed-ips" : {
@@ -346,7 +373,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Alias Firewall" ],
@@ -386,7 +416,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfig-aliases/{name}/allowed-ips/{id}" : {
@@ -419,7 +452,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfig-aliases/{name}/secretkey" : {
@@ -439,7 +475,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Alias Access Control" ],
@@ -471,7 +510,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Alias Access Control" ],
@@ -500,7 +542,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Alias Access Control" ],
@@ -520,7 +565,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     }
   },

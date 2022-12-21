@@ -80,7 +80,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Config" ],
@@ -116,7 +119,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/activate" : {
@@ -133,7 +139,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/deactivate" : {
@@ -150,7 +159,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/delete" : {
@@ -167,7 +179,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/package" : {
@@ -217,7 +232,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}" : {
@@ -243,7 +261,10 @@
           "401" : {
             "description" : "unathorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Config" ],
@@ -281,7 +302,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Config" ],
@@ -301,7 +325,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "patch" : {
         "tags" : [ "Job Config" ],
@@ -339,7 +366,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/clone" : {
@@ -376,7 +406,10 @@
               "$ref" : "#/definitions/ApiErrorResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/favorites" : {
@@ -411,7 +444,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Config" ],
@@ -431,7 +467,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/filelinks" : {
@@ -473,7 +512,10 @@
           "409" : {
             "description" : "Conflict"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/filelinks/{linkid}" : {
@@ -499,7 +541,10 @@
           "204" : {
             "description" : "No Content"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/files" : {
@@ -555,7 +600,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Config Files" ],
@@ -596,7 +644,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/files/entrypoints/{key+}" : {
@@ -631,7 +682,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/files/{key}" : {
@@ -660,7 +714,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Config Files" ],
@@ -692,7 +749,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Config Files" ],
@@ -719,7 +779,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/macrodef" : {
@@ -785,7 +848,10 @@
           "500" : {
             "description" : "server exception"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/macros" : {
@@ -841,7 +907,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Config Macros" ],
@@ -876,7 +945,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/macros/{name}" : {
@@ -907,7 +979,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Config Macros" ],
@@ -950,7 +1025,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Config Macros" ],
@@ -975,7 +1053,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/owner" : {
@@ -1016,7 +1097,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/package/entrypoints" : {
@@ -1042,7 +1126,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/schedule" : {
@@ -1064,11 +1151,6 @@
           "description" : "Schedule key",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -1083,7 +1165,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Config Scheduling" ],
@@ -1106,11 +1191,6 @@
           "schema" : {
             "$ref" : "#/definitions/ScheduleRequest"
           }
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -1131,7 +1211,10 @@
           "409" : {
             "description" : "conflict"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Config Scheduling" ],
@@ -1160,11 +1243,6 @@
           "schema" : {
             "$ref" : "#/definitions/ScheduleRequest"
           }
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -1179,7 +1257,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Config Scheduling" ],
@@ -1198,11 +1279,6 @@
           "description" : "Schedule key",
           "required" : true,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -1220,7 +1296,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/schedules" : {
@@ -1266,11 +1345,6 @@
           "description" : "Filter (user name)",
           "required" : false,
           "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "Bearer [access_token]",
-          "required" : true
         } ],
         "responses" : {
           "200" : {
@@ -1282,7 +1356,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobconfigs/{id}/subscription" : {
@@ -1319,7 +1396,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates" : {
@@ -1416,7 +1496,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/package" : {
@@ -1466,7 +1549,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}" : {
@@ -1492,7 +1578,10 @@
           "401" : {
             "description" : "unathorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Template" ],
@@ -1530,7 +1619,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Template" ],
@@ -1555,7 +1647,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "patch" : {
         "tags" : [ "Job Template" ],
@@ -1593,7 +1688,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/clone" : {
@@ -1627,7 +1725,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/favorites" : {
@@ -1662,7 +1763,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Template" ],
@@ -1682,7 +1786,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/filelinks" : {
@@ -1724,7 +1831,10 @@
           "409" : {
             "description" : "Conflict"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/filelinks/{linkid}" : {
@@ -1738,7 +1848,10 @@
           "204" : {
             "description" : "No Content"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/files" : {
@@ -1795,7 +1908,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Template Files" ],
@@ -1836,7 +1952,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/files/entrypoints/{key+}" : {
@@ -1871,7 +1990,10 @@
           "404" : {
             "description" : "not found"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/files/{key}" : {
@@ -1901,7 +2023,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Template Files" ],
@@ -1933,7 +2058,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Template Files" ],
@@ -1963,7 +2091,10 @@
               "$ref" : "#/definitions/ApiErrorResponse"
             }
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/jobconfigs" : {
@@ -2019,7 +2150,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Template" ],
@@ -2054,7 +2188,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/jobconfigs/package" : {
@@ -2110,7 +2247,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/macrodef" : {
@@ -2179,7 +2319,10 @@
           "500" : {
             "description" : "server exception"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/macros" : {
@@ -2235,7 +2378,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "post" : {
         "tags" : [ "Job Template Macros" ],
@@ -2276,7 +2422,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/macros/{name}" : {
@@ -2307,7 +2456,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "put" : {
         "tags" : [ "Job Template Macros" ],
@@ -2350,7 +2502,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       },
       "delete" : {
         "tags" : [ "Job Template Macros" ],
@@ -2375,7 +2530,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/owner" : {
@@ -2416,7 +2574,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     },
     "/jobtemplates/{id}/package/entrypoints" : {
@@ -2442,7 +2603,10 @@
           "401" : {
             "description" : "unauthorized"
           }
-        }
+        },
+        "security" : [ {
+          "Authorization: Bearer" : [ ]
+        } ]
       }
     }
   },

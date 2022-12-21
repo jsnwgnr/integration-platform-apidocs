@@ -336,7 +336,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/AgentResponse"
             }

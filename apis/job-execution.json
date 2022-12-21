@@ -70,7 +70,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobListResponse"
             }
@@ -120,7 +120,10 @@
             }
           },
           "202" : {
-            "description" : "accepted"
+            "description" : "accepted",
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
           },
           "401" : {
             "description" : "unauthorized"
@@ -183,8 +186,8 @@
               "type" : "string"
             }
           },
-          "201" : {
-            "description" : "created"
+          "202" : {
+            "description" : "accepted"
           },
           "400" : {
             "description" : "bad request"
@@ -221,6 +224,12 @@
         "responses" : {
           "200" : {
             "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/JobResponse"
+            }
+          },
+          "202" : {
+            "description" : "accepted",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
@@ -275,8 +284,8 @@
               "type" : "string"
             }
           },
-          "201" : {
-            "description" : "created"
+          "202" : {
+            "description" : "accepted"
           },
           "400" : {
             "description" : "bad request"
@@ -366,7 +375,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobListResponse"
             }
@@ -427,8 +436,8 @@
               "$ref" : "#/definitions/JobResponse"
             }
           },
-          "201" : {
-            "description" : "created",
+          "202" : {
+            "description" : "accepted",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
@@ -460,7 +469,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/BulkOperation"
             }
@@ -486,7 +495,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/BulkOperation"
             }
@@ -511,8 +520,8 @@
         "operationId" : "bulkStopJobs",
         "produces" : [ "application/json" ],
         "responses" : {
-          "204" : {
-            "description" : "success"
+          "202" : {
+            "description" : "accepted"
           },
           "401" : {
             "description" : "unauthorized"
@@ -535,7 +544,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/BulkOperation"
             }
@@ -567,7 +576,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
@@ -645,7 +654,7 @@
         "operationId" : "getJobStatus",
         "responses" : {
           "200" : {
-            "description" : "unauthorized",
+            "description" : "ok",
             "schema" : {
               "type" : "string"
             }
@@ -677,7 +686,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized",
@@ -742,19 +751,13 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation",
+            "description" : "ok",
             "schema" : {
-              "$ref" : "#/definitions/BaseListResponseTextMessage"
+              "$ref" : "#/definitions/BaseListResponse"
             }
-          },
-          "201" : {
-            "description" : "created"
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "bad request"
           },
           "401" : {
             "description" : "unauthorized"
@@ -813,7 +816,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
@@ -851,7 +854,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized"
@@ -885,7 +888,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/TextMessage"
             }
@@ -925,7 +928,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "type" : "string"
             }
@@ -988,7 +991,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobStatsResponse"
             }
@@ -1053,6 +1056,9 @@
             "schema" : {
               "type" : "string"
             }
+          },
+          "202" : {
+            "description" : "accepted"
           },
           "400" : {
             "description" : "bad request"

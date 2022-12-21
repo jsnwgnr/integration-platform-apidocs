@@ -35,7 +35,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/AccountResponse"
             }
@@ -104,7 +104,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
@@ -465,7 +465,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroListResponse"
             }
@@ -562,7 +562,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -610,7 +610,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -707,7 +707,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
@@ -774,7 +774,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserListResponse"
             }
@@ -847,7 +847,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
@@ -914,7 +914,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserMetricsListResponse"
             }
@@ -950,7 +950,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
@@ -993,7 +993,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
@@ -1065,7 +1065,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
@@ -1423,7 +1423,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroListResponse"
             }
@@ -1520,7 +1520,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -1569,7 +1569,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -1643,7 +1643,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized"
@@ -1729,7 +1729,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "type" : "object",
               "additionalProperties" : {
@@ -1783,7 +1783,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserPreferenceResponse"
             }
@@ -1877,7 +1877,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/UserPreferenceResponse"
             }

@@ -74,7 +74,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobConfigListResponse"
             }
@@ -139,7 +139,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized"
@@ -162,7 +162,7 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized"
@@ -267,7 +267,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobConfigResponse"
             }
@@ -302,7 +302,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobConfigResponse"
             }
@@ -369,7 +369,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobConfigResponse"
             }
@@ -609,7 +609,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
@@ -691,7 +691,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/EntryPoints"
             }
@@ -732,7 +732,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized"
@@ -767,7 +767,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileResponse"
             }
@@ -934,7 +934,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroListResponse"
             }
@@ -1012,7 +1012,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -1055,7 +1055,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -1130,7 +1130,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobConfigResponse"
             }
@@ -1165,7 +1165,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/EntryPoints"
             }
@@ -1517,7 +1517,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobTemplateListResponse"
             }
@@ -1641,7 +1641,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobTemplateResponse"
             }
@@ -1676,7 +1676,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobTemplateResponse"
             }
@@ -1748,7 +1748,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobTemplateResponse"
             }
@@ -1977,7 +1977,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
@@ -2059,7 +2059,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/EntryPoints"
             }
@@ -2101,7 +2101,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success"
+            "description" : "ok"
           },
           "401" : {
             "description" : "unauthorized"
@@ -2136,7 +2136,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/FileResponse"
             }
@@ -2231,7 +2231,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobConfigListResponse"
             }
@@ -2465,7 +2465,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroListResponse"
             }
@@ -2546,7 +2546,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -2589,7 +2589,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
@@ -2664,7 +2664,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/JobTemplateResponse"
             }
@@ -2699,7 +2699,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "ok",
             "schema" : {
               "$ref" : "#/definitions/EntryPoints"
             }

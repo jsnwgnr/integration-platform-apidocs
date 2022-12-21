@@ -7,6 +7,8 @@
   "host" : "api.dev.actiandatacloud.com",
   "basePath" : "/v2/api",
   "tags" : [ {
+    "name" : "@Login"
+  }, {
     "name" : "Job Config"
   }, {
     "name" : "Job Config Bulk APIs"
@@ -2608,17 +2610,66 @@
           "Bearer token" : [ ]
         } ]
       }
+    },
+    "/login" : {
+      "post" : {
+        "tags" : [ "@Login" ],
+        "summary" : "Generates an auth token for accessing the Integration Manager API",
+        "description" : "The auth token is a JSON Web Token (JWT) which is used in the Authorization header in the format 'Authorization: Bearer [access_token value]' to make other Integration Manager API calls.",
+        "operationId" : "login",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/LoginRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns signed auth token to the response body key called 'access_token'",
+            "schema" : {
+              "$ref" : "#/definitions/AccessTokenResponse"
+            }
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        }
+      }
     }
   },
   "securityDefinitions" : {
     "Bearer token" : {
-      "description" : "Enter Authorization Header value in the format of 'Bearer [jwt token value]'. See https://datatracker.ietf.org/doc/rfc6750/.",
+      "description" : "Enter access_token value from Login. Use format 'Bearer [access_token value]'.",
       "type" : "apiKey",
       "name" : "authorization",
       "in" : "header"
     }
   },
   "definitions" : {
+    "AccessTokenResponse" : {
+      "type" : "object",
+      "properties" : {
+        "access_token" : {
+          "type" : "string"
+        },
+        "token_type" : {
+          "type" : "string"
+        },
+        "expires_in" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
     "ApiErrorResponse" : {
       "type" : "object",
       "properties" : {
@@ -3003,6 +3054,17 @@
         }
       }
     },
+    "LoginRequest" : {
+      "type" : "object",
+      "properties" : {
+        "username" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        }
+      }
+    },
     "Macro" : {
       "type" : "object",
       "properties" : {
@@ -3161,6 +3223,31 @@
         },
         "body" : {
           "type" : "object"
+        },
+        "statusCode" : {
+          "type" : "string",
+          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
+        },
+        "statusCodeValue" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "ResponseEntityAccessTokenResponse" : {
+      "type" : "object",
+      "properties" : {
+        "headers" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        },
+        "body" : {
+          "$ref" : "#/definitions/AccessTokenResponse"
         },
         "statusCode" : {
           "type" : "string",

@@ -42,6 +42,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -108,6 +111,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -324,13 +330,13 @@
             }
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "bad request"
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -401,6 +407,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "500" : {
             "description" : "server exception"
           }
@@ -464,6 +473,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -513,6 +525,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           },
@@ -554,6 +569,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -600,6 +618,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -634,6 +655,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -646,8 +670,8 @@
     "/login" : {
       "post" : {
         "tags" : [ "@Login" ],
-        "summary" : "Generates an auth token for accessing the Integration Manager API",
-        "description" : "The auth token is a JSON Web Token (JWT) which is used in the Authorization header in the format 'Authorization: Bearer [access_token value]' to make other Integration Manager API calls.",
+        "summary" : "Retrieve an access_token",
+        "description" : "The access_token value is used in the Authorization header in the format 'Authorization: Bearer [access_token value]' to make other API calls.",
         "operationId" : "login",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -660,19 +684,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "Returns signed auth token to the response body key called 'access_token'",
+            "description" : "access token",
             "schema" : {
               "$ref" : "#/definitions/AccessTokenResponse"
             }
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "bad request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "inactive user, bad credentials, user locked out"
           }
         }
       }
@@ -693,6 +714,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -757,6 +781,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -790,13 +817,13 @@
             "description" : "created"
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "bad request"
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -827,6 +854,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -892,6 +922,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -924,6 +957,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -964,6 +1000,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -1033,6 +1072,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -1249,13 +1291,13 @@
             }
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "bad request"
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -1325,6 +1367,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -1386,6 +1431,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -1435,6 +1483,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           },
@@ -1476,6 +1527,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -1523,6 +1577,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -1558,6 +1615,9 @@
           "401" : {
             "description" : "unauthorized"
           },
+          "403" : {
+            "description" : "access denied"
+          },
           "404" : {
             "description" : "not found"
           }
@@ -1587,6 +1647,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -1634,6 +1697,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           }
         },
         "security" : [ {
@@ -1673,6 +1739,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -1727,6 +1796,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"
@@ -1818,6 +1890,9 @@
           },
           "401" : {
             "description" : "unauthorized"
+          },
+          "403" : {
+            "description" : "access denied"
           },
           "404" : {
             "description" : "not found"

@@ -79,8 +79,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       },
       "post" : {
@@ -125,8 +123,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -193,9 +189,9 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
-        }, {
           "Authorization: Basic" : [ ]
+        }, {
+          "Authorization: Bearer" : [ ]
         } ]
       }
     },
@@ -232,9 +228,62 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
-        }, {
           "Authorization: Basic" : [ ]
+        }, {
+          "Authorization: Bearer" : [ ]
+        } ]
+      }
+    },
+    "/jobconfigs/{id}/notifications" : {
+      "post" : {
+        "tags" : [ "Job" ],
+        "summary" : "Run a Job with a text message input. Ordered processing.",
+        "description" : "",
+        "operationId" : "runJobConfigFromNotification",
+        "consumes" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
+        "produces" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "messagename",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "created"
+          },
+          "400" : {
+            "description" : "bad request",
+            "schema" : {
+              "$ref" : "#/definitions/ApiErrorResponse"
+            }
+          },
+          "401" : {
+            "description" : "unauthorized"
+          }
+        },
+        "security" : [ {
+          "Authorization: Basic" : [ ]
+        }, {
+          "Authorization: Bearer" : [ ]
         } ]
       }
     },
@@ -320,8 +369,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       },
       "post" : {
@@ -387,8 +434,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -412,8 +457,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -437,8 +480,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -459,8 +500,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -484,8 +523,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -518,8 +555,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       },
       "head" : {
@@ -540,8 +575,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       },
       "delete" : {
@@ -569,8 +602,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -593,8 +624,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -627,8 +656,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -700,8 +727,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -761,8 +786,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -795,8 +818,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -834,8 +855,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -873,8 +892,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -932,8 +949,6 @@
         },
         "security" : [ {
           "Authorization: Bearer" : [ ]
-        }, {
-          "Authorization: Basic" : [ ]
         } ]
       }
     },
@@ -941,7 +956,7 @@
       "post" : {
         "tags" : [ "Job" ],
         "summary" : "Run a Job listener by alias with an input message accessible to the job",
-        "description" : "JobConfig Alias Authorization Schemes:\n  - Authorization: Basic and Authorization: Bearer [jwt token] are always accepted within the same account  - If ONLY api key is set, then it must be supplied via the 'x-api-key' header  - If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of Base64Encode(api-key:api-secret)",
+        "description" : "JobConfig Alias Authorization Schemes:\n  - Authorization: Basic and Authorization: Bearer [jwt token] are always accepted within the same account\n  - If ONLY api key is set, then it must be supplied via the 'x-api-key' header\n  - If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of Base64Encode(api-key:api-secret)",
         "operationId" : "runAliasWithMessage",
         "consumes" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
         "produces" : [ "text/plain", "text/xml", "application/xml", "application/json" ],
@@ -978,24 +993,6 @@
           "required" : false,
           "type" : "boolean",
           "default" : false
-        }, {
-          "name" : "x-property-name",
-          "in" : "header",
-          "description" : "Custom input message properties can be added using Http Request headers in the format of 'x-property-name' if desired",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "x-api-key",
-          "in" : "header",
-          "description" : "If ONLY api key is set, then it must be supplied via the 'x-api-key' header",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "Authorization",
-          "in" : "header",
-          "description" : "If BOTH api key and api secret are set, then Authorization: Basic is required, in the format of 'Basic Base64Encode(api-key:api-secret)'",
-          "required" : false,
-          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -1015,21 +1012,30 @@
           }
         },
         "security" : [ {
-          "Authorization: Bearer" : [ ]
-        }, {
           "Authorization: Basic" : [ ]
+        }, {
+          "AliasApiKey" : [ ]
+        }, {
+          "Authorization: Bearer" : [ ]
         } ]
       }
     }
   },
   "securityDefinitions" : {
+    "AliasApiKey" : {
+      "description" : "Enter x-api-key provided for Alias access. Value is typically unique to each Alias.",
+      "type" : "apiKey",
+      "name" : "x-api-key",
+      "in" : "header"
+    },
     "Authorization: Basic" : {
+      "description" : "This can also be used for api key (username) and api secret (password) provided for Alias access. Values are typically unique to each Alias.",
       "type" : "basic"
     },
     "Authorization: Bearer" : {
       "description" : "Enter Authorization Header value in the format of 'Bearer [jwt token value]'. See https://datatracker.ietf.org/doc/rfc6750/.",
       "type" : "apiKey",
-      "name" : "Authorization",
+      "name" : "authorization",
       "in" : "header"
     }
   },

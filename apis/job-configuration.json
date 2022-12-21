@@ -2614,7 +2614,7 @@
     "Authorization: Bearer" : {
       "description" : "Enter Authorization Header value in the format of 'Bearer [jwt token value]'. See https://datatracker.ietf.org/doc/rfc6750/.",
       "type" : "apiKey",
-      "name" : "Authorization",
+      "name" : "authorization",
       "in" : "header"
     }
   },

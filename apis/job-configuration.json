@@ -134,6 +134,14 @@
         "description" : "",
         "operationId" : "bulkActivateJobConfigs",
         "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BulkOperation"
+          }
+        } ],
         "responses" : {
           "202" : {
             "description" : "Accepted"
@@ -157,6 +165,14 @@
         "description" : "",
         "operationId" : "bulkDeactivateJobConfigs",
         "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BulkOperation"
+          }
+        } ],
         "responses" : {
           "202" : {
             "description" : "Accepted"
@@ -180,6 +196,14 @@
         "description" : "",
         "operationId" : "bulkDeleteJobConfigs",
         "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BulkOperation"
+          }
+        } ],
         "responses" : {
           "202" : {
             "description" : "Accepted"
@@ -641,7 +665,7 @@
           "name" : "key",
           "in" : "query",
           "description" : "key",
-          "required" : true,
+          "required" : false,
           "type" : "string"
         } ],
         "responses" : {
@@ -1235,7 +1259,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "ScheduleRequest",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/ScheduleRequest"
@@ -1284,7 +1307,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "ScheduleRequest",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/ScheduleRequest"
@@ -1430,7 +1452,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SubscriptionRequest"
           }
@@ -2757,6 +2779,17 @@
         "expires_in" : {
           "type" : "integer",
           "format" : "int64"
+        }
+      }
+    },
+    "BulkOperation" : {
+      "type" : "object",
+      "properties" : {
+        "recordIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
         }
       }
     },

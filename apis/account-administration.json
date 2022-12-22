@@ -98,7 +98,7 @@
         }, {
           "name" : "filter",
           "in" : "query",
-          "description" : "Filter (file name)",
+          "description" : "Filter (user name)",
           "required" : false,
           "type" : "string"
         } ],
@@ -558,7 +558,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "MacroRequest object",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/MacroRequest"
@@ -654,7 +653,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "MacroRequest",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/MacroRequest"
@@ -852,7 +850,6 @@
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
-          "description" : "JSON to create a user.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/UserRequest"
@@ -1034,7 +1031,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "UserRequest object",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/UserRequest"
@@ -1571,7 +1567,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "MacroRequest",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/MacroRequest"
@@ -1668,7 +1663,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "MacroRequest",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/MacroRequest"
@@ -1779,7 +1773,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "JSON for a User Preference set.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/UserPreferenceRequest"
@@ -1873,7 +1866,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "JSON for a User Preference set.",
           "required" : true,
           "schema" : {
             "type" : "object",
@@ -1958,7 +1950,6 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "JSON for a User Preference set.",
           "required" : true,
           "schema" : {
             "type" : "object",

@@ -416,14 +416,12 @@
           "name" : "wait",
           "in" : "query",
           "required" : false,
-          "type" : "boolean",
-          "default" : false
+          "type" : "boolean"
         }, {
           "name" : "ordered",
           "in" : "query",
           "required" : false,
-          "type" : "boolean",
-          "default" : false
+          "type" : "boolean"
         } ],
         "responses" : {
           "202" : {
@@ -506,6 +504,14 @@
         "description" : "",
         "operationId" : "bulkStopJobs",
         "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BulkOperation"
+          }
+        } ],
         "responses" : {
           "202" : {
             "description" : "Accepted"

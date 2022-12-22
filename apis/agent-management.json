@@ -74,6 +74,14 @@
         "description" : "",
         "operationId" : "registerAgent",
         "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/AgentRequest"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "Registered",
@@ -160,7 +168,7 @@
         }, {
           "name" : "upgradeType",
           "in" : "query",
-          "required" : true,
+          "required" : false,
           "type" : "string"
         } ],
         "responses" : {
@@ -292,6 +300,13 @@
         "description" : "",
         "operationId" : "getAgentLicenseInfo",
         "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Agent hostname",
+          "required" : true,
+          "type" : "string"
+        } ],
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -352,6 +367,20 @@
         "operationId" : "changeOwner",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Agent hostname",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Owner"
+          }
+        } ],
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -490,6 +519,35 @@
           "items" : {
             "$ref" : "#/definitions/AgentResponse"
           }
+        }
+      }
+    },
+    "AgentRequest" : {
+      "type" : "object",
+      "properties" : {
+        "hostname" : {
+          "type" : "string"
+        },
+        "ipAddress" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "os" : {
+          "type" : "string"
+        },
+        "worker" : {
+          "type" : "string"
+        },
+        "engine" : {
+          "type" : "string"
+        },
+        "dataflow" : {
+          "type" : "string"
+        },
+        "destinationId" : {
+          "type" : "string"
         }
       }
     },
@@ -632,6 +690,14 @@
           "type" : "string"
         },
         "password" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Owner" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
           "type" : "string"
         }
       }

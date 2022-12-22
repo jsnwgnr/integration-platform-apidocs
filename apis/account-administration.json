@@ -128,7 +128,7 @@
         "summary" : "Create a Public File",
         "description" : "",
         "operationId" : "createAccountFile",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -138,10 +138,16 @@
           "type" : "string"
         }, {
           "name" : "key",
-          "in" : "query",
+          "in" : "formData",
           "description" : "file name",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "201" : {
@@ -250,7 +256,7 @@
         "summary" : "Update a Public File",
         "description" : "",
         "operationId" : "updateAccountFile",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -264,6 +270,12 @@
           "description" : "file name",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "200" : {
@@ -395,6 +407,7 @@
         "summary" : "Import MacroDef file to Public Macros",
         "description" : "",
         "operationId" : "importAccountMacroDef",
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -402,6 +415,12 @@
           "description" : "Account Id",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "MacroDef file, Json or Xml",
+          "required" : true,
+          "type" : "file"
         }, {
           "name" : "offset",
           "in" : "query",
@@ -1119,7 +1138,7 @@
         "summary" : "Create a Private File",
         "description" : "",
         "operationId" : "createUserFile",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1129,10 +1148,16 @@
           "type" : "string"
         }, {
           "name" : "key",
-          "in" : "query",
-          "description" : "key",
+          "in" : "formData",
+          "description" : "file name",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "201" : {
@@ -1241,7 +1266,7 @@
         "summary" : "Update a Private File",
         "description" : "",
         "operationId" : "updateUserFile",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1255,6 +1280,12 @@
           "description" : "file name",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "200" : {
@@ -1386,6 +1417,7 @@
         "summary" : "Import MacroDef file to Private Macros",
         "description" : "",
         "operationId" : "importUserMacroDef",
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1393,6 +1425,12 @@
           "description" : "User Id",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "MacroDef file, Json or Xml",
+          "required" : true,
+          "type" : "file"
         }, {
           "name" : "offset",
           "in" : "query",

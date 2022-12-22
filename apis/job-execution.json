@@ -109,8 +109,7 @@
           "name" : "ordered",
           "in" : "query",
           "required" : false,
-          "type" : "boolean",
-          "default" : false
+          "type" : "boolean"
         } ],
         "responses" : {
           "202" : {
@@ -145,6 +144,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
+          "description" : "JobConfig Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -163,16 +163,17 @@
           "required" : false,
           "type" : "boolean"
         }, {
-          "name" : "msgBody",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
         }, {
           "name" : "ordered",
           "in" : "query",
           "required" : false,
-          "type" : "boolean",
-          "default" : false
+          "type" : "boolean"
         } ],
         "responses" : {
           "202" : {
@@ -216,7 +217,7 @@
           "name" : "key",
           "in" : "formData",
           "description" : "file name",
-          "required" : true,
+          "required" : false,
           "type" : "string"
         }, {
           "name" : "file",
@@ -228,8 +229,7 @@
           "name" : "ordered",
           "in" : "query",
           "required" : false,
-          "type" : "boolean",
-          "default" : false
+          "type" : "boolean"
         } ],
         "responses" : {
           "202" : {
@@ -266,6 +266,7 @@
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
+          "description" : "JobConfig Id",
           "required" : true,
           "type" : "string"
         }, {
@@ -274,10 +275,12 @@
           "required" : false,
           "type" : "string"
         }, {
-          "name" : "msgBody",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
         } ],
         "responses" : {
           "202" : {
@@ -994,16 +997,17 @@
           "required" : false,
           "type" : "boolean"
         }, {
-          "name" : "msgBody",
-          "in" : "query",
-          "required" : true,
-          "type" : "string"
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
         }, {
           "name" : "ordered",
           "in" : "query",
           "required" : false,
-          "type" : "boolean",
-          "default" : false
+          "type" : "boolean"
         } ],
         "responses" : {
           "202" : {

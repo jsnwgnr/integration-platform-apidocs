@@ -223,6 +223,12 @@
           "required" : false,
           "type" : "boolean",
           "default" : false
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "201" : {
@@ -813,13 +819,19 @@
         "summary" : "Import distinct Macros from MacroDef file to Job Config",
         "description" : "Macro value is only returned if the macro is not marked as secure. Secure macros can only be updated if update is secure.",
         "operationId" : "importJobConfigMacroDef",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "MacroDef file, Json or Xml",
+          "required" : true,
+          "type" : "file"
         }, {
           "name" : "offset",
           "in" : "query",
@@ -1566,6 +1578,12 @@
           "required" : false,
           "type" : "boolean",
           "default" : false
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "Package file",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "201" : {
@@ -1958,7 +1976,7 @@
         "summary" : "Create a new Job Template File",
         "description" : "Request body contents will be saved to the file contents. ",
         "operationId" : "createJobTemplateFile",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1968,10 +1986,16 @@
           "type" : "string"
         }, {
           "name" : "key",
-          "in" : "query",
-          "description" : "key",
+          "in" : "formData",
+          "description" : "file name",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "201" : {
@@ -2076,7 +2100,7 @@
         "summary" : "Update a Job Template File",
         "description" : "Request body contents will be saved to the file contents. ",
         "operationId" : "updateJobTemplateFile",
-        "consumes" : [ "application/octet-stream" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -2086,10 +2110,16 @@
           "type" : "string"
         }, {
           "name" : "key",
-          "in" : "path",
+          "in" : "formData",
           "description" : "file name",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "200" : {
@@ -2276,6 +2306,12 @@
           "required" : false,
           "type" : "boolean",
           "default" : false
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "Package file",
+          "required" : true,
+          "type" : "file"
         } ],
         "responses" : {
           "201" : {
@@ -2305,13 +2341,19 @@
         "summary" : "Import distinct Macros from MacroDef file to Job Template",
         "description" : "Macro value is only returned if the macro is not marked as secure. ",
         "operationId" : "importJobTemplateMacroDef",
-        "consumes" : [ "application/json" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "MacroDef file, Json or Xml",
+          "required" : true,
+          "type" : "file"
         }, {
           "name" : "offset",
           "in" : "query",

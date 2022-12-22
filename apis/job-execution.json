@@ -204,9 +204,27 @@
         "summary" : "Run a Job asynchronously with a multipart file input. Filename will be available as $(LOCAL_JOB_SPEC_DIR)/filename at runtime.",
         "description" : "",
         "operationId" : "runJobConfigWithFile",
-        "consumes" : [ "application/octet-stream", "multipart/form-data" ],
+        "consumes" : [ "multipart/form-data" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "JobConfig Id",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "key",
+          "in" : "formData",
+          "description" : "file name",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file content",
+          "required" : true,
+          "type" : "file"
+        }, {
           "name" : "ordered",
           "in" : "query",
           "required" : false,

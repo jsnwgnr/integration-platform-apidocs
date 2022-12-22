@@ -57,16 +57,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -89,23 +89,17 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/AliasResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/FieldErrorListResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           }
         },
         "security" : [ {
@@ -128,16 +122,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -166,22 +160,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasResponse"
             }
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/FieldErrorListResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -201,13 +192,13 @@
         } ],
         "responses" : {
           "204" : {
-            "description" : "success"
+            "description" : "No Content"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -230,16 +221,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasAccessKeyResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -264,17 +255,14 @@
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/AliasAccessKeyResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           }
         },
         "security" : [ {
@@ -300,13 +288,13 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasAccessKeyResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           }
         },
         "security" : [ {
@@ -326,13 +314,13 @@
         } ],
         "responses" : {
           "204" : {
-            "description" : "success"
+            "description" : "No Content"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -385,27 +373,28 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "success",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasAllowedIpResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
           "Bearer token" : [ ]
         } ]
       },
-      "put" : {
+      "post" : {
         "tags" : [ "Alias Firewall" ],
         "summary" : "Adds an allowed IP address, or updates the label for an allowed IP address for a job config alias",
         "description" : "created a new allowed IP address",
         "operationId" : "putAliasAllowedIp",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "name",
@@ -421,26 +410,20 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseEntityObject"
-            }
-          },
           "201" : {
-            "description" : "created",
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/AliasAllowedIp"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -466,20 +449,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "204" : {
+            "description" : "No Content",
             "schema" : {
-              "$ref" : "#/definitions/ResponseEntityObject"
+              "type" : "object"
             }
           },
-          "204" : {
-            "description" : "success"
-          },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -496,16 +476,16 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AliasSecretKeyResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -530,17 +510,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/AliasSecretKeyResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -566,13 +546,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK"
+          },
+          "201" : {
+            "description" : "successful operation",
             "schema" : {
               "$ref" : "#/definitions/AliasSecretKeyResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           }
         },
         "security" : [ {
@@ -592,13 +575,13 @@
         } ],
         "responses" : {
           "204" : {
-            "description" : "success"
+            "description" : "No Content"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -612,6 +595,7 @@
         "summary" : "Retrieve an access_token",
         "description" : "The access_token value is used in the Authorization header in the format 'Authorization: Bearer [access_token value]' to make other API calls.",
         "operationId" : "login",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "body",
@@ -623,16 +607,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "access token",
+            "description" : "Access Token",
             "schema" : {
               "$ref" : "#/definitions/AccessTokenResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "inactive user, bad credentials, user locked out"
+            "description" : "Inactive, Bad Credentials, or Locked Out"
           }
         }
       }
@@ -865,35 +849,6 @@
         }
       }
     },
-    "FieldErrorListResponse" : {
-      "type" : "object",
-      "properties" : {
-        "message" : {
-          "type" : "string"
-        },
-        "errors" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/FieldErrorResponse"
-          }
-        }
-      }
-    },
-    "FieldErrorResponse" : {
-      "type" : "object",
-      "properties" : {
-        "field" : {
-          "type" : "string"
-        },
-        "errorMessages" : {
-          "type" : "array",
-          "uniqueItems" : true,
-          "items" : {
-            "type" : "string"
-          }
-        }
-      }
-    },
     "LoginRequest" : {
       "type" : "object",
       "properties" : {
@@ -916,106 +871,6 @@
         },
         "href" : {
           "type" : "string"
-        }
-      }
-    },
-    "ResponseEntity" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "type" : "object"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "ResponseEntityAccessTokenResponse" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "$ref" : "#/definitions/AccessTokenResponse"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "ResponseEntityAliasAllowedIpResponse" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "$ref" : "#/definitions/AliasAllowedIpResponse"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "ResponseEntityObject" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "type" : "object"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
         }
       }
     }

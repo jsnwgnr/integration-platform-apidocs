@@ -70,16 +70,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/JobListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -113,23 +113,20 @@
           "default" : false
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "202" : {
+            "description" : "Accepted",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
           },
-          "202" : {
-            "description" : "accepted",
-            "schema" : {
-              "$ref" : "#/definitions/JobResponse"
-            }
+          "400" : {
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -166,12 +163,10 @@
           "required" : false,
           "type" : "boolean"
         }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "name" : "msgBody",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
         }, {
           "name" : "ordered",
           "in" : "query",
@@ -180,23 +175,20 @@
           "default" : false
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "202" : {
+            "description" : "Accepted",
             "schema" : {
               "type" : "string"
             }
           },
-          "202" : {
-            "description" : "accepted"
-          },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -222,26 +214,20 @@
           "default" : false
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/JobResponse"
-            }
-          },
           "202" : {
-            "description" : "accepted",
+            "description" : "Accepted",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -270,31 +256,26 @@
           "required" : false,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "name" : "msgBody",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "202" : {
+            "description" : "Accepted",
             "schema" : {
               "type" : "string"
             }
           },
-          "202" : {
-            "description" : "accepted"
-          },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -375,16 +356,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/JobListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -424,35 +405,20 @@
           "default" : false
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "headers" : {
-              "location" : {
-                "type" : "string",
-                "description" : "resource location"
-              }
-            },
-            "schema" : {
-              "$ref" : "#/definitions/JobResponse"
-            }
-          },
           "202" : {
-            "description" : "accepted",
+            "description" : "Accepted",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
           },
           "400" : {
-            "description" : "not runnable",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -469,16 +435,16 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/BulkOperation"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -495,16 +461,16 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/BulkOperation"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -521,13 +487,13 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "202" : {
-            "description" : "accepted"
+            "description" : "Accepted"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -544,16 +510,16 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/BulkOperation"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -576,39 +542,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/JobResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
-          }
-        },
-        "security" : [ {
-          "Bearer token" : [ ]
-        } ]
-      },
-      "head" : {
-        "tags" : [ "Job" ],
-        "summary" : "Confirm job is ok to run",
-        "description" : "",
-        "operationId" : "isJobRunnable",
-        "responses" : {
-          "200" : {
-            "description" : "yes",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseEntity"
-            }
-          },
-          "410" : {
-            "description" : "no"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -628,17 +574,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "204" : {
-            "description" : "success"
+          "202" : {
+            "description" : "Accepted"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -654,16 +600,16 @@
         "operationId" : "getJobStatus",
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "type" : "string"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -686,16 +632,13 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok"
+            "description" : "OK"
           },
           "401" : {
-            "description" : "unauthorized",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Unauthorized"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -711,13 +654,11 @@
         "operationId" : "getJobOutMessages",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
+          "name" : "id",
+          "in" : "path",
           "description" : "Job Id",
           "required" : true,
-          "schema" : {
-            "type" : "string"
-          }
+          "type" : "string"
         }, {
           "name" : "offset",
           "in" : "query",
@@ -751,19 +692,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/BaseListResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -816,16 +757,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -854,13 +795,13 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok"
+            "description" : "OK"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -888,19 +829,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/TextMessage"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -928,19 +869,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "type" : "string"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -981,26 +922,24 @@
           "required" : false,
           "type" : "string"
         }, {
-          "in" : "body",
-          "name" : "body",
+          "name" : "filter",
+          "in" : "query",
           "description" : "filter",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "required" : true,
+          "type" : "string"
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/JobStatsResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -1037,12 +976,10 @@
           "required" : false,
           "type" : "boolean"
         }, {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
+          "name" : "msgBody",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
         }, {
           "name" : "ordered",
           "in" : "query",
@@ -1051,23 +988,20 @@
           "default" : false
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "202" : {
+            "description" : "Accepted",
             "schema" : {
               "type" : "string"
             }
           },
-          "202" : {
-            "description" : "accepted"
-          },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -1085,6 +1019,7 @@
         "summary" : "Retrieve an access_token",
         "description" : "The access_token value is used in the Authorization header in the format 'Authorization: Bearer [access_token value]' to make other API calls.",
         "operationId" : "login",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "body",
@@ -1096,16 +1031,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "access token",
+            "description" : "Access Token",
             "schema" : {
               "$ref" : "#/definitions/AccessTokenResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "inactive user, bad credentials, user locked out"
+            "description" : "Inactive, Bad Credentials, or Locked Out"
           }
         }
       }
@@ -1142,14 +1077,6 @@
         "expires_in" : {
           "type" : "integer",
           "format" : "int64"
-        }
-      }
-    },
-    "ApiErrorResponse" : {
-      "type" : "object",
-      "properties" : {
-        "message" : {
-          "type" : "string"
         }
       }
     },
@@ -1556,56 +1483,6 @@
         },
         "href" : {
           "type" : "string"
-        }
-      }
-    },
-    "ResponseEntity" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "type" : "object"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "ResponseEntityAccessTokenResponse" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "$ref" : "#/definitions/AccessTokenResponse"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
         }
       }
     },

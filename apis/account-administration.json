@@ -35,16 +35,16 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/AccountResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -104,19 +104,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -144,11 +144,20 @@
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/FileResponse"
             }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -178,10 +187,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/EntryPoints"
             }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -210,8 +228,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "default" : {
-            "description" : "successful operation"
+          "200" : {
+            "description" : "OK"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -240,10 +267,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/FileResponse"
             }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -269,8 +305,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "default" : {
-            "description" : "successful operation"
+          "204" : {
+            "description" : "No Content"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -324,19 +369,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/LoginAttemptListResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -389,26 +434,20 @@
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "500" : {
             "description" : "server exception"
@@ -465,19 +504,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/MacroListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -507,29 +546,23 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           },
           "409" : {
             "description" : "conflict"
@@ -562,19 +595,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -610,19 +643,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -634,7 +667,6 @@
         "summary" : "Delete a Public Macro",
         "description" : "",
         "operationId" : "deleteAccountMacro",
-        "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -650,16 +682,16 @@
         } ],
         "responses" : {
           "204" : {
-            "description" : "success"
+            "description" : "No Content"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -673,6 +705,7 @@
         "summary" : "Retrieve an access_token",
         "description" : "The access_token value is used in the Authorization header in the format 'Authorization: Bearer [access_token value]' to make other API calls.",
         "operationId" : "login",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "body",
@@ -684,16 +717,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "access token",
+            "description" : "Access Token",
             "schema" : {
               "$ref" : "#/definitions/AccessTokenResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "inactive user, bad credentials, user locked out"
+            "description" : "Inactive, Bad Credentials, or Locked Out"
           }
         }
       }
@@ -707,19 +740,19 @@
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -774,16 +807,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -807,23 +840,20 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -847,19 +877,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -914,19 +944,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserMetricsListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -950,19 +980,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -993,19 +1023,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1065,19 +1095,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/FileListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1100,16 +1130,25 @@
         }, {
           "name" : "key",
           "in" : "query",
-          "description" : "file name",
+          "description" : "key",
           "required" : true,
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/FileResponse"
             }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1139,10 +1178,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/EntryPoints"
             }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1171,8 +1219,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "default" : {
-            "description" : "successful operation"
+          "200" : {
+            "description" : "OK"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1201,10 +1258,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/FileResponse"
             }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1230,8 +1296,17 @@
           "type" : "string"
         } ],
         "responses" : {
-          "default" : {
-            "description" : "successful operation"
+          "204" : {
+            "description" : "No Content"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Access Denied"
+          },
+          "404" : {
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1285,19 +1360,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/LoginAttemptListResponse"
             }
           },
           "400" : {
-            "description" : "bad request"
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -1357,19 +1432,19 @@
             }
           },
           "201" : {
-            "description" : "created"
-          },
-          "400" : {
-            "description" : "bad request",
+            "description" : "Created",
             "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
+              "$ref" : "#/definitions/MacroListResponse"
             }
           },
+          "400" : {
+            "description" : "Bad Request"
+          },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -1423,19 +1498,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/MacroListResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1465,29 +1540,23 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           },
           "409" : {
             "description" : "conflict"
@@ -1520,19 +1589,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1569,19 +1638,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/MacroResponse"
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1593,8 +1662,6 @@
         "summary" : "Delete a Private Macro",
         "description" : "",
         "operationId" : "deleteUserMacro",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -1610,16 +1677,16 @@
         } ],
         "responses" : {
           "204" : {
-            "description" : "success"
+            "description" : "No Content"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1643,13 +1710,13 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok"
+            "description" : "OK"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -1663,6 +1730,7 @@
         "summary" : "Create User Preferences for {type}",
         "description" : "",
         "operationId" : "createUserPreferenceInfo",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1680,26 +1748,20 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/UserPreferenceResponse"
             }
           },
-          "201" : {
-            "description" : "created"
-          },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           }
         },
         "security" : [ {
@@ -1729,7 +1791,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "type" : "object",
               "additionalProperties" : {
@@ -1738,13 +1800,13 @@
             }
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1756,6 +1818,7 @@
         "summary" : "Update User Preferences for {type}",
         "description" : "",
         "operationId" : "updateUserPreferenceInfo",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1783,25 +1846,22 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserPreferenceResponse"
             }
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1813,7 +1873,6 @@
         "summary" : "Delete User Preferences for {type}",
         "description" : "",
         "operationId" : "deleteUserPreferenceInfo",
-        "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -1828,17 +1887,11 @@
           "type" : "string"
         } ],
         "responses" : {
-          "200" : {
-            "description" : "successful operation",
-            "schema" : {
-              "$ref" : "#/definitions/UserPreferenceResponse"
-            }
-          },
           "204" : {
-            "description" : "success"
+            "description" : "No Content"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1850,6 +1903,7 @@
         "summary" : "Patch User Preferences for {type}",
         "description" : "",
         "operationId" : "patchUserPreferenceInfo",
+        "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -1877,25 +1931,22 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "ok",
+            "description" : "OK",
             "schema" : {
               "$ref" : "#/definitions/UserPreferenceResponse"
             }
           },
           "400" : {
-            "description" : "bad request",
-            "schema" : {
-              "$ref" : "#/definitions/ApiErrorResponse"
-            }
+            "description" : "Bad Request"
           },
           "401" : {
-            "description" : "unauthorized"
+            "description" : "Unauthorized"
           },
           "403" : {
-            "description" : "access denied"
+            "description" : "Access Denied"
           },
           "404" : {
-            "description" : "not found"
+            "description" : "Not Found"
           }
         },
         "security" : [ {
@@ -1958,14 +2009,6 @@
           "type" : "string"
         },
         "customerId" : {
-          "type" : "string"
-        }
-      }
-    },
-    "ApiErrorResponse" : {
-      "type" : "object",
-      "properties" : {
-        "message" : {
           "type" : "string"
         }
       }
@@ -2242,56 +2285,6 @@
         },
         "href" : {
           "type" : "string"
-        }
-      }
-    },
-    "ResponseEntity" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "type" : "object"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
-        }
-      }
-    },
-    "ResponseEntityAccessTokenResponse" : {
-      "type" : "object",
-      "properties" : {
-        "headers" : {
-          "type" : "object",
-          "additionalProperties" : {
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          }
-        },
-        "body" : {
-          "$ref" : "#/definitions/AccessTokenResponse"
-        },
-        "statusCode" : {
-          "type" : "string",
-          "enum" : [ "CONTINUE", "SWITCHING_PROTOCOLS", "PROCESSING", "CHECKPOINT", "OK", "CREATED", "ACCEPTED", "NON_AUTHORITATIVE_INFORMATION", "NO_CONTENT", "RESET_CONTENT", "PARTIAL_CONTENT", "MULTI_STATUS", "ALREADY_REPORTED", "IM_USED", "MULTIPLE_CHOICES", "MOVED_PERMANENTLY", "FOUND", "MOVED_TEMPORARILY", "SEE_OTHER", "NOT_MODIFIED", "USE_PROXY", "TEMPORARY_REDIRECT", "PERMANENT_REDIRECT", "BAD_REQUEST", "UNAUTHORIZED", "PAYMENT_REQUIRED", "FORBIDDEN", "NOT_FOUND", "METHOD_NOT_ALLOWED", "NOT_ACCEPTABLE", "PROXY_AUTHENTICATION_REQUIRED", "REQUEST_TIMEOUT", "CONFLICT", "GONE", "LENGTH_REQUIRED", "PRECONDITION_FAILED", "PAYLOAD_TOO_LARGE", "REQUEST_ENTITY_TOO_LARGE", "URI_TOO_LONG", "REQUEST_URI_TOO_LONG", "UNSUPPORTED_MEDIA_TYPE", "REQUESTED_RANGE_NOT_SATISFIABLE", "EXPECTATION_FAILED", "I_AM_A_TEAPOT", "INSUFFICIENT_SPACE_ON_RESOURCE", "METHOD_FAILURE", "DESTINATION_LOCKED", "UNPROCESSABLE_ENTITY", "LOCKED", "FAILED_DEPENDENCY", "UPGRADE_REQUIRED", "PRECONDITION_REQUIRED", "TOO_MANY_REQUESTS", "REQUEST_HEADER_FIELDS_TOO_LARGE", "UNAVAILABLE_FOR_LEGAL_REASONS", "INTERNAL_SERVER_ERROR", "NOT_IMPLEMENTED", "BAD_GATEWAY", "SERVICE_UNAVAILABLE", "GATEWAY_TIMEOUT", "HTTP_VERSION_NOT_SUPPORTED", "VARIANT_ALSO_NEGOTIATES", "INSUFFICIENT_STORAGE", "LOOP_DETECTED", "BANDWIDTH_LIMIT_EXCEEDED", "NOT_EXTENDED", "NETWORK_AUTHENTICATION_REQUIRED" ]
-        },
-        "statusCodeValue" : {
-          "type" : "integer",
-          "format" : "int32"
         }
       }
     },
